@@ -8,14 +8,12 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["Open sans", "sans-serif", ...defaultTheme.fontFamily.sans],
-      mono: [
-        "Fira Code",
-        "Ubuntu",
-        "monospace",
-        ...defaultTheme.fontFamily.mono,
-      ],
+      mono: ["interstate-mono", "monospace", ...defaultTheme.fontFamily.mono],
     },
     extend: {
+      inset: {
+        18: "4.5rem",
+      },
       colors: {
         warmGray: colors.warmGray,
         themeGray: {
