@@ -1,48 +1,47 @@
-import Image from "next/image";
 import { SiPython } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 import { FaReact } from "react-icons/fa";
+import { FaAngleRight } from "react-icons/fa";
 import { SiNextdotjs } from "react-icons/si";
 const Hero = () => {
   return (
-    <div className="flex items-start section">
-      <div className="flex-1 h-[600px] flex justify-center mt-[120px]">
+    <div className="flex gap-20 lg:gap-0 items-start lg:items-center flex-col lg:flex-row w-full section">
+      <div className="lg:h-[600px] flex lg:pl-12 lg:justify-center lg:mt-[120px]">
         <div>
-          <span className="w-48 px-4 py-1 text-sm font-bold text-center bg-yellow-400 text-themeGray-darker">
-            Fullstack Developer
+          <span className="w-48 px-4 py-1 text-sm font-bold text-center border-yellow-300 border-2 text-yellow-300">
+            Rodrigo Nascimento
           </span>
-          <h2 className="mt-12 text-6xl font-bold">Talk is cheap</h2>
-          <h3 className="mt-4 text-4xl font-light">Show me the code</h3>
-          <h2 className="mt-16 text-2xl font-light tracking-wider text-yellow-300 underline uppercase">
-            Let's Talk
+          <h2 className="mt-6 md:mt-12 text-3xl md:text-6xl font-bold">
+            Fullstack Developer
           </h2>
+          <h3 className="mt-2 md:mt-4 text-xl font-light">
+            Based in Stockholm
+          </h3>
+          <button className="btn-primary text-themeGray-light mt-12">
+            Let's Talk
+            <FaAngleRight className="w-6 h-6 mt-px" />
+          </button>
         </div>
       </div>
-      <div className="flex-1 flex h-[600px] flex-col justify-center">
-        <div className="relative">
-          <div className="absolute h-12 w-12 rod-float rounded-full bg-themeGray-darker"></div>
-          <div className="absolute rod-float flex-center top-10 right-20 h-[120px] z-10 w-[120px] bg-themeGray-darker rounded-full">
-            <SiPython className="text-indigo-500 h-14 w-14" />
+      <div className="flex-1 flex lg:h-[600px] w-full flex-col items-center lg:justify-center">
+        <div className="relative ">
+          <div className="absolute h-6 w-6 lg:h-12 lg:w-12 rod-float rounded-full bg-yellow-300 dark:bg-themeGray-darker"></div>
+          <div className="absolute shadow-lg rod-float flex-center top-28 lg:top-48 right-0 lg:-right-10 w-[60px] h-[60px] lg:h-[120px] z-10 lg:w-[120px] bg-[#fafafa] dark:bg-themeGray-darker rounded-full">
+            <SiPython className="text-indigo-500 h-7 w-7 lg:h-14 lg:w-14" />
           </div>
-          <div className="absolute flex-center top-20 rod-float right-28 filter blur-lg h-[100px] opacity-50 w-[100px] bg-themeGray-darker rounded-full"></div>
-          <div className="absolute rod-float  -top-28 z-10 right-[320px] h-[140px] flex-center w-[140px] bg-themeGray-darker rounded-full">
-            <FaNodeJs className="text-green-500 w-[72px] h-[72px]" />
+          <div className="absolute rod-float-delay-3 shadow-lg -top-5 lg:-top-14 z-10 right-[10px] lg:right-[60px] w-[80px] h-[80px] lg:h-[140px] flex-center lg:w-[140px] bg-[#fafafa] dark:bg-themeGray-darker rounded-full">
+            <FaNodeJs className="text-green-500 w-[36px] h-[36px] lg:w-[72px] lg:h-[72px]" />
           </div>
-          <div className="absolute -top-20 opacity-75 filter rod-float blur-lg right-[340px] h-[140px] flex-center w-[140px] bg-themeGray-darker rounded-full"></div>
-          <div className="absolute z-10 rod-float top-[320px] right-[280px] h-[120px] z-10 flex-center w-[120px] bg-themeGray-darker rounded-full">
-            <SiNextdotjs className="text-themeGray-light w-14 h-14" />
+          <div className="absolute z-10 rod-float-delay-2 shadow-lg top-[240px] lg:top-[420px] right-[40px] lg:right-[100px] h-[80px] w-[80px] lg:h-[120px] z-10 flex-center lg:w-[120px] bg-[#fafafa] dark:bg-themeGray-darker rounded-full">
+            <SiNextdotjs className="text-themeGray-dark dark:text-themeGray-light w-10 h-10 lg:w-14 lg:h-14" />
           </div>
-          <div className="absolute flex-center top-[360px] right-[300px] rod-float filter blur-lg h-[100px] opacity-75 w-[100px] bg-themeGray-darker rounded-full"></div>
-          <div className="absolute z-10 rod-float top-[260px] -left-8 h-[120px] flex-center w-[120px] bg-themeGray-darker rounded-full">
-            <FaReact className="text-blue-600 w-14 h-14" />
+          <div className="absolute z-10 rod-float-delay-1 rod-float shadow-lg top-[220px] lg:top-[320px] left-0 lg:-left-8 h-[80px] lg:h-[120px] flex-center w-[80px] lg:w-[120px] bg-[#fafafa] dark:bg-themeGray-darker rounded-full">
+            <FaReact className="text-blue-600 w-10 h-10 lg:w-14 lg:h-14" />
           </div>
-          <div className="absolute opacity-75 top-[280px] -left-12 rod-float filter blur-lg h-[120px] flex-center w-[120px] bg-themeGray-darker rounded-full"></div>
-          <Image
-            className="shadow-xl"
+          <img
             src="/me-bg.png"
-            alt="Picture of the author"
-            width={360}
-            height={360}
+            alt="The authors photo"
+            className="w-[280px] lg:w-[512px] object-contain h-[280px] lg:h-[512px]"
           />
         </div>
       </div>

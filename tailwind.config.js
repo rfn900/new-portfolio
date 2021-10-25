@@ -17,7 +17,7 @@ module.exports = {
       colors: {
         warmGray: colors.warmGray,
         themeGray: {
-          light: "#fefefe",
+          light: "#f8f8f8",
           medium: "#636469",
           base: "#2D2E32",
           dark: "#282A2D",

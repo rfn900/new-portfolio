@@ -5,8 +5,11 @@
 @tailwind utilities;
 
 @layer components {
+  .btn-primary {
+    @apply flex items-center gap-1 text-lg px-4 py-2 border-0 bg-yellow-400 dark:text-themeGray-darker text-themeGray-darker rounded-md;
+  }
   .section {
-    @apply min-h-[720px] w-screen max-w-[1920px] px-16 2xl:min-h-[580px];
+    @apply min-h-[720px] w-screen max-w-[1920px] px-8 md:px-16 2xl:min-h-[580px];
   }
 
   .flex-center {
@@ -14,11 +17,24 @@
   }
 }
 
+.rod-glass {
+  backdrop-filter: blur(16.5px);
+  -webkit-backdrop-filter: blur(16.5px);
+}
 .rod-float {
   animation: float 6s ease-in-out infinite;
 }
-.rod-delay-200 {
-  animation-delay: 2000ms;
+.rod-float-delay-1 {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 1s;
+}
+.rod-float-delay-2 {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 2s;
+}
+.rod-float-delay-3 {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 3s;
 }
 @keyframes float {
   0% {
@@ -35,5 +51,48 @@
   }
   50% {
     transform: translate(0px, 0px);
+  }
+}
+
+.rod-blink-light {
+  animation: blink-light 0.8s infinite;
+}
+.rod-blink-dark {
+  animation: blink-dark 0.8s infinite;
+}
+
+@keyframes blink-light {
+  0% {
+    background-color: #282a2d;
+  }
+  49% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #282a2d;
+  }
+}
+
+@keyframes blink-dark {
+  0% {
+    background-color: #fefefe;
+  }
+  49% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #fefefe;
   }
 }
