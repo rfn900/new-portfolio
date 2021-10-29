@@ -6,10 +6,10 @@
 
 @layer components {
   .btn-primary {
-    @apply flex items-center gap-1 text-lg px-4 py-2 border-0 bg-yellow-400 dark:text-themeGray-darker text-themeGray-darker rounded-md;
+    @apply flex items-center gap-1 text-xl px-6 py-2 border-0 bg-yellow-400 transition hover:bg-opacity-90 dark:text-themeGray-darker text-themeGray-darker rounded-md shadow;
   }
   .section {
-    @apply min-h-[720px] w-screen max-w-[1920px] px-8 md:px-16 2xl:min-h-[580px];
+    @apply min-h-screen w-screen max-w-[1920px] px-8 md:px-16 m-auto;
   }
 
   .flex-center {

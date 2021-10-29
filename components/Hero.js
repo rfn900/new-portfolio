@@ -17,9 +17,10 @@ const Hero = () => {
           <h3 className="mt-2 md:mt-4 text-xl font-light">
             Based in Stockholm
           </h3>
-          <button className="btn-primary text-themeGray-light mt-12">
-            Let's Talk
-            <FaAngleRight className="w-6 h-6 mt-px" />
+          <button className="relative btn-primary text-themeGray-light mt-12">
+            Check My Projects
+            <div className="h-8 w-2 bg-themeGray-dark"></div>
+            <MdOutlineScreenShare className="w-6 h-6 ml-1 mt-px" />
           </button>
         </div>
       </div>
@@ -43,7 +44,12 @@ const Hero = () => {
             alt="The authors photo"
             className="w-[280px] lg:w-[512px] object-contain h-[280px] lg:h-[512px]"
           />
+          <div className="absolute inset-x-0 h-1/2 bg-themeGray-base"></div>
+          <div className="absolute inset-x-0 h-1/2 bg-themeGray-base"></div>
         </div>
+      </div>
+      <div className="absolute bottom-28 left-1/2 transform w-12 h-12 border-2 -translate-x-1/2 animate-bounce">
+        <HiOutlineChevronDoubleDown className="w-6 h-6" />
       </div>
     </div>
   );
