@@ -1,17 +1,49 @@
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { HiOutlineCode } from "react-icons/hi";
 import { HiOutlineViewGrid } from "react-icons/hi";
 import { MdSyncProblem } from "react-icons/md";
 import { MdPictureAsPdf } from "react-icons/md";
 import AppButton from "./AppButton";
+
 const AboutMe = () => {
+  const { ref: bl1ref, inView: inView1 } = useInView({
+    threshold: 0.3,
+  });
+
+  const { ref: bl2ref, inView: inView2 } = useInView({
+    threshold: 0.3,
+  });
+  const easing = [0.6, -0.05, 0.01, 0.99];
+  const initialLeft = {
+    x: -60,
+    opacity: 0,
+  };
+  const initialRight = {
+    x: 60,
+    opacity: 0,
+  };
+  const final = {
+    x: 0,
+    opacity: 1,
+  };
   return (
-    <div className="flex-center mt-24 xs:mt-0 flex-col section">
-      <h2 className="w-full font-mono text-4xl font-bold text-center">
-        Who I am
-      </h2>
+    <motion.div
+      exit={{ opacity: 0 }}
+      initial="initial"
+      animate="animate"
+      className="flex-center mt-24 xs:mt-0 flex-col section"
+    >
+      <h2>Who I am</h2>
       <div className="flex flex-col gap-4 lg:gap-0 w-full lg:flex-row  items-center lg:items-start mt-16 md:mt-24 h-[900px] lg:h-[500px]">
         <div className="flex flex-col w-full items-center lg:items-end xl:pr-8 h-full lg:mr-12 lg:w-1/2 ">
-          <div className="flex flex-col overflow-hidden max-w-[360px] md:max-w-[480px] gap-8 bg-transparent relative dark:bg-themeGray-dark p-4 rounded-xl w-full lg:w-[500px] h-full">
+          <motion.div
+            ref={bl1ref}
+            initial={initialLeft}
+            animate={inView1 ? final : initialLeft}
+            transition={{ duration: 0.6, ease: easing }}
+            className="flex flex-col overflow-hidden max-w-[360px] md:max-w-[480px] gap-8 bg-transparent relative dark:bg-themeGray-dark p-4 rounded-xl w-full lg:w-[500px] h-full"
+          >
             <div className="absolute inset-0 opacity-50 bg-themeGray-medium dark:hidden filter blur-xl"></div>
             <div className="z-10 flex items-center w-full py-4 pr-2 shadow-md lg:px-2 gap-0 lg:gap-2 bg-themeGray-light dark:bg-themeGray-darker rounded-xl h-1/3 transition hover:shadow-xl">
               <div className="px-4">
@@ -58,9 +90,15 @@ const AboutMe = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
-        <div className="bg-themeGray-light dark:bg-themeGray-dark md:w-[480px] rounded-xl h-full ">
+        <motion.div
+          ref={bl2ref}
+          initial={initialRight}
+          animate={inView2 ? final : initialRight}
+          transition={{ duration: 0.6, ease: easing }}
+          className="bg-themeGray-light dark:bg-themeGray-dark md:w-[480px] rounded-xl h-full "
+        >
           <div className="h-full pt-8 pl-8 pr-4 pb-8">
             <p className="text-yellow-400 text-sm underline">
               More About Me...
@@ -79,9 +117,9 @@ const AboutMe = () => {
             </p>
             <AppButton text="Download My CV" Icon={MdPictureAsPdf} />
           </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
