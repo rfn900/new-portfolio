@@ -1,3 +1,4 @@
+import { AnimatePresence } from "framer-motion";
 import Layout from "../components/Layout";
 import "../styles/globals.css";
 import { DarkModeContext } from "../context/darkMode";
@@ -7,7 +8,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
       <Layout>
-        <Component {...pageProps} />
+        <AnimatePresence exitBeforeEnter>
+          <Component {...pageProps} />
+        </AnimatePresence>
       </Layout>
     </DarkModeContext.Provider>
   );
