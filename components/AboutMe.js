@@ -10,7 +10,7 @@ const AboutMe = () => {
         Who am I?
       </h2>
       <div className="flex flex-col gap-4 lg:gap-0 w-full lg:flex-row  items-center lg:items-start mt-16 md:mt-24 h-[900px] lg:h-[500px]">
-        <div className="flex flex-col w-full items-center h-full lg:mr-12 lg:w-1/2 ">
+        <div className="flex flex-col w-full items-center lg:items-end xl:pr-8 h-full lg:mr-12 lg:w-1/2 ">
           <div className="flex flex-col overflow-hidden max-w-[360px] md:max-w-[480px] gap-8 bg-transparent relative dark:bg-themeGray-dark p-4 rounded-xl w-full lg:w-[500px] h-full">
             <div className="absolute inset-0 opacity-50 bg-themeGray-medium dark:hidden filter blur-xl"></div>
             <div className="z-10 flex items-center w-full py-4 pr-2 shadow-md lg:px-2 gap-0 lg:gap-2 bg-themeGray-light dark:bg-themeGray-darker rounded-xl h-1/3 transition hover:shadow-xl">
