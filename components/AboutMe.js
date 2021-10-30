@@ -7,7 +7,7 @@ const AboutMe = () => {
   return (
     <div className="flex-center mt-24 xs:mt-0 flex-col section">
       <h2 className="w-full font-mono text-4xl font-bold text-center">
-        Who am I?
+        Who I am
       </h2>
       <div className="flex flex-col gap-4 lg:gap-0 w-full lg:flex-row  items-center lg:items-start mt-16 md:mt-24 h-[900px] lg:h-[500px]">
         <div className="flex flex-col w-full items-center lg:items-end xl:pr-8 h-full lg:mr-12 lg:w-1/2 ">
@@ -75,7 +75,7 @@ const AboutMe = () => {
             </p>
             <p className="mt-4 pr-2">
               Currently, I am finishing a Fullstack Web Developer course (YH) at
-              Nackademin.
+              Nackademin in Stockholm, Sweden.
             </p>
             <AppButton text="Download My CV" Icon={MdPictureAsPdf} />
           </div>

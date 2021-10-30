@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
   const { darkMode, setDarkMode } = useContext(DarkModeContext);
   return (
     <div
-      className={`min-h-screen ${
+      className={`overflow-hidden min-h-screen ${
         darkMode ? "dark" : ""
       } flex flex-col font-sans `}
     >
