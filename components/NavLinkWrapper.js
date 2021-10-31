@@ -1,7 +1,7 @@
 export const NavLinkWrapper = ({ children }) => {
   return (
     <p className="group relative cursor-pointer transition hover:text-yellow-400">
-      <span className="absolute top-0 -left-4 text-yellow-400 pr-px transition hidden group-hover:inline-block ">
+      <span className={ `absolute top-0 -left-4 text-yellow-400 pr-px transition hidden ${areWeHere? "inline-block"} group-hover:inline-block `}>
         &lt;
       </span>
       {children}

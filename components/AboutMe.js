@@ -5,6 +5,12 @@ import { HiOutlineViewGrid } from "react-icons/hi";
 import { MdSyncProblem } from "react-icons/md";
 import { MdPictureAsPdf } from "react-icons/md";
 import AppButton from "./AppButton";
+import {
+  initialLeft,
+  initialRight,
+  final,
+} from "../animation/animationsOnScroll";
+import { easing } from "../animation/settings";
 
 const AboutMe = () => {
   const { ref: bl1ref, inView: inView1 } = useInView({
@@ -14,19 +20,7 @@ const AboutMe = () => {
   const { ref: bl2ref, inView: inView2 } = useInView({
     threshold: 0.3,
   });
-  const easing = [0.6, -0.05, 0.01, 0.99];
-  const initialLeft = {
-    x: -60,
-    opacity: 0,
-  };
-  const initialRight = {
-    x: 60,
-    opacity: 0,
-  };
-  const final = {
-    x: 0,
-    opacity: 1,
-  };
+
   return (
     <motion.div
       exit={{ opacity: 0 }}
@@ -34,7 +28,7 @@ const AboutMe = () => {
       animate="animate"
       className="flex-center mt-24 xs:mt-0 flex-col section"
     >
-      <h2>Who I am</h2>
+      <h2 className="text-4xl font-bold font-mono text-center">Who I am</h2>
       <div className="flex flex-col gap-4 lg:gap-0 w-full lg:flex-row  items-center lg:items-start mt-16 md:mt-24 h-[900px] lg:h-[500px]">
         <div className="flex flex-col w-full items-center lg:items-end xl:pr-8 h-full lg:mr-12 lg:w-1/2 ">
           <motion.div
@@ -44,7 +38,7 @@ const AboutMe = () => {
             transition={{ duration: 0.6, ease: easing }}
             className="flex flex-col overflow-hidden max-w-[360px] md:max-w-[480px] gap-8 bg-transparent relative dark:bg-themeGray-dark p-4 rounded-xl w-full lg:w-[500px] h-full"
           >
-            <div className="absolute inset-0 opacity-50 bg-themeGray-medium dark:hidden filter blur-xl"></div>
+            <div className="absolute inset-0 opacity-50 bg-themeGray-mediumLight dark:hidden filter blur-xl"></div>
             <div className="z-10 flex items-center w-full py-4 pr-2 shadow-md lg:px-2 gap-0 lg:gap-2 bg-themeGray-light dark:bg-themeGray-darker rounded-xl h-1/3 transition hover:shadow-xl">
               <div className="px-4">
                 <div className="w-12 h-12 bg-yellow-400 rounded-full lg:h-16 lg:w-16 flex-center">
@@ -104,7 +98,7 @@ const AboutMe = () => {
               More About Me...
             </p>
             <h2 className="text-2xl lg:text-3xl font-mono mt-8">
-              Hello, I'm Rodrigo Nascimento
+              Hello 👋🏽, I'm Rodrigo Nascimento
             </h2>
             <p className="mt-8 pr-2">
               I am a Brazilian born web developer with a Ph.D in

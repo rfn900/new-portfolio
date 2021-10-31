@@ -3,7 +3,6 @@ import { SiPython } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 import { FaReact } from "react-icons/fa";
 import { SiNextdotjs } from "react-icons/si";
-import { HiOutlineChevronDoubleDown } from "react-icons/hi";
 import { MdOutlineScreenShare } from "react-icons/md";
 import AppButton from "../components/AppButton";
 const easing = [0.6, -0.05, 0.01, 0.99];
@@ -89,14 +88,6 @@ const Hero = () => {
             className="lg:w-[400px] object-contain lg:h-[400px] max-w-[400px] w-full"
           />
         </div>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8, duration: 0.8 }}
-        className="absolute hidden md:flex-center bottom-12 opacity-50 border-themeGray-base dark:border-themeGray-light rounded-full left-1/2 w-12 h-12 border-2 transform -translate-x-1/2 "
-      >
-        <HiOutlineChevronDoubleDown className="w-4 h-4 text-themeGray-base dark:text-themeGray-light" />
       </motion.div>
     </motion.div>
   );
