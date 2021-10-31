@@ -12,7 +12,7 @@ import {
 } from "../animation/animationsOnScroll";
 import { easing } from "../animation/settings";
 
-const AboutMe = () => {
+const AboutMe = ({ id }) => {
   const { ref: bl1ref, inView: inView1 } = useInView({
     threshold: 0.3,
   });
@@ -23,6 +23,7 @@ const AboutMe = () => {
 
   return (
     <motion.div
+      id={id}
       exit={{ opacity: 0 }}
       initial="initial"
       animate="animate"

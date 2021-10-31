@@ -1,5 +1,4 @@
 import { useEffect, useContext, useState } from "react";
-import Link from "next/link";
 import { BsGithub } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 import { MdLightMode } from "react-icons/md";
@@ -10,10 +9,18 @@ import { FaMoon } from "react-icons/fa";
 import { DarkModeContext } from "../context/darkMode";
 import { NavLinkWrapper } from "./NavLinkWrapper";
 
+import { animateScroll as scroll } from "react-scroll";
 const Nav = () => {
   const { darkMode, setDarkMode } = useContext(DarkModeContext);
   const [scrolled, setScrolled] = useState(false);
 
+  const scrollToTop = () => {
+    scroll.scrollToTop({
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
+  };
   useEffect(() => {
     window.addEventListener("scroll", () => {
       window.scrollY > 80 ? setScrolled(true) : setScrolled(false);
@@ -42,12 +49,26 @@ const Nav = () => {
                 } bg-themeGray-dark dark:bg-white absolute `}
               ></div>
             </div>
+        <div
+          onClick={() => {
+            scrollToTop();
+          }}
+          className="flex cursor-pointer items-center gap-2 lg:gap-4 text-2xl font-mono text-themeGray-dark dark:text-themeGray-light"
+        >
+          <div className="h-8 relative flex pr-6 pl-1 items-center rounded text-themeGray-dark dark:text-themeGray-light bg-themeGray-light dark:bg-themeGray-base">
+            <FaAngleRight />
+            <span className="font-mono">rods.dev</span>
+            <div
+              className={`w-3 h-1 right-3 bottom-1 opacity-[0.5] ${
+                darkMode ? "rod-blink-dark" : "rod-blink-light"
+              } bg-themeGray-dark dark:bg-white absolute `}
+            ></div>
           </div>
-        </Link>
+        </div>
         <div className="capitalize hidden lg:flex gap-12 text-base font-mono text-themeGray-dark dark:text-themeGray-light">
-          <NavLinkWrapper>About</NavLinkWrapper>
-          <NavLinkWrapper>Skills</NavLinkWrapper>
-          <NavLinkWrapper>Projects</NavLinkWrapper>
+          <NavLinkWrapper toSection="about">About</NavLinkWrapper>
+          <NavLinkWrapper toSection="skills">Skills</NavLinkWrapper>
+          <NavLinkWrapper toSection="projects">Projects</NavLinkWrapper>
         </div>
         <div className="flex gap-4 lg:gap-12 items-center">
           <a href="https://github.com/rfn900" target="_blank">

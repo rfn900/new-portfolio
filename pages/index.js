@@ -1,13 +1,26 @@
+import { useContext } from "react";
+import { motion } from "framer-motion";
+import { scroller } from "react-scroll";
 import Hero from "../components/Hero";
 import AboutMe from "../components/AboutMe";
 import Skills from "../components/Skills";
 import ContactMe from "../components/ContactMe";
-
 import { HiOutlineChevronDoubleDown } from "react-icons/hi";
+import Projects from "../components/Projects";
+import { ActiveSectionContext } from "../context/activeSection";
 export default function Home() {
+  const { setActiveSection } = useContext(ActiveSectionContext);
+  function scrollTo() {
+    scroller.scrollTo("about", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
+  }
+
   return (
-    <div
-      className={`text-themeDark-dark dark:text-themeGray-light flex-1 bg-themeGray-light dark:bg-themeGray-base `}
+    <motion.div
+      className={`relative text-themeDark-dark dark:text-themeGray-light flex-1 bg-themeGray-light dark:bg-themeGray-base `}
     >
       <Hero />
       <motion.a
@@ -26,5 +39,7 @@ export default function Home() {
       <AboutMe id="about" />
       <Skills id="skills" />
       <Projects id="projects" />
+      <ContactMe id="contactme" />
+    </motion.div>
   );
 }
