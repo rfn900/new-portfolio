@@ -7,11 +7,12 @@ import { HiMenu } from "react-icons/hi";
 import { FaAngleRight } from "react-icons/fa";
 import { FaMoon } from "react-icons/fa";
 import { DarkModeContext } from "../context/darkMode";
+import { ActiveSectionContext } from "../context/activeSection";
 import { NavLinkWrapper } from "./NavLinkWrapper";
-
 import { animateScroll as scroll } from "react-scroll";
 const Nav = () => {
   const { darkMode, setDarkMode } = useContext(DarkModeContext);
+  const { setActiveSection } = useContext(ActiveSectionContext);
   const [scrolled, setScrolled] = useState(false);
 
   const scrollToTop = () => {
@@ -38,20 +39,10 @@ const Nav = () => {
       } top-0 w-screen py-6 bg-transparent transition duration-500 px-4 lg:px-16 `}
     >
       <div className="flex items-center justify-between max-w-[1920px] mx-auto">
-        <Link href="/">
-          <div className="flex cursor-pointer items-center gap-2 lg:gap-4 text-2xl font-mono text-themeGray-dark dark:text-themeGray-light">
-            <div className="h-8 relative flex pr-6 pl-1 items-center rounded text-themeGray-dark dark:text-themeGray-light bg-themeGray-light dark:bg-themeGray-base">
-              <FaAngleRight />
-              <span className="font-mono">rods.dev</span>
-              <div
-                className={`w-3 h-1 right-3 bottom-1 opacity-[0.5] ${
-                  darkMode ? "rod-blink-dark" : "rod-blink-light"
-                } bg-themeGray-dark dark:bg-white absolute `}
-              ></div>
-            </div>
         <div
           onClick={() => {
             scrollToTop();
+            setActiveSection("home");
           }}
           className="flex cursor-pointer items-center gap-2 lg:gap-4 text-2xl font-mono text-themeGray-dark dark:text-themeGray-light"
         >
