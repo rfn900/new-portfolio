@@ -10,10 +10,6 @@ export default function Home() {
       className={`text-themeDark-dark dark:text-themeGray-light flex-1 bg-themeGray-light dark:bg-themeGray-base `}
     >
       <Hero />
-      <AboutMe />
-      <Skills />
-      <ContactMe />
-    </div>
       <motion.a
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -26,5 +22,9 @@ export default function Home() {
       >
         <HiOutlineChevronDoubleDown className=" left-1/2 w-4 h-4 text-themeGray-base dark:text-themeGray-light" />
       </motion.a>
+
+      <AboutMe id="about" />
+      <Skills id="skills" />
+      <Projects id="projects" />
   );
 }
