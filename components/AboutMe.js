@@ -103,7 +103,7 @@ const AboutMe = ({ id }) => {
             </h2>
             <p className="mt-8 pr-2">
               I am a Brazilian born web developer with a Ph.D in
-              theoretical/computational physics and an strong interest for
+              theoretical/computational physics and a strong interest for
               design.
             </p>
             <p className="mt-4 pr-2">

@@ -60,22 +60,20 @@ const Nav = () => {
           <NavLinkWrapper toSection="about">About</NavLinkWrapper>
           <NavLinkWrapper toSection="skills">Skills</NavLinkWrapper>
           <NavLinkWrapper toSection="projects">Projects</NavLinkWrapper>
+          <NavLinkWrapper toSection="contactme">Contact Me</NavLinkWrapper>
+          {/*
+          <NavLinkWrapper toSection="contactme">Blog</NavLinkWrapper>
+          */}
         </div>
-        <div className="flex gap-4 lg:gap-12 items-center">
+        <div className="flex gap-4 lg:gap-8 items-center">
           <a href="https://github.com/rfn900" target="_blank">
             <div className="hidden lg:flex gap-4 cursor-pointer">
               <BsGithub className="text-themeGray-dark dark:text-themeGray-light w-6 h-6 transition " />
-              <span className="text-themeGray-dark dark:text-themeGray-light">
-                Github
-              </span>
             </div>
           </a>
           <a href="https://linkedin.com/in/rodrigofnascimento" target="_blank">
             <div className="hidden lg:flex gap-4 cursor-pointer">
               <BsLinkedin className="text-themeGray-dark dark:text-themeGray-light w-6 h-6 transition " />
-              <span className="text-themeGray-dark dark:text-themeGray-light">
-                LinkedIn
-              </span>
             </div>
           </a>
           <div
