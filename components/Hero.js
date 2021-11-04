@@ -4,6 +4,7 @@ import { FaNodeJs } from "react-icons/fa";
 import { FaReact } from "react-icons/fa";
 import { SiNextdotjs } from "react-icons/si";
 import { MdOutlineScreenShare } from "react-icons/md";
+import { useActivateSection } from "../customHooks/useActivateSection";
 import AppButton from "../components/AppButton";
 const easing = [0.6, -0.05, 0.01, 0.99];
 const fadeInUp = {
@@ -29,9 +30,11 @@ const stagger = {
   },
 };
 const Hero = () => {
+  const { ref } = useActivateSection("hero");
   const darkModeIllustration = "/me-illustration.png";
   return (
     <motion.div
+      ref={ref}
       exit={{ opacity: 0 }}
       initial="initial"
       animate="animate"

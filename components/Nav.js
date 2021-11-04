@@ -22,6 +22,7 @@ const Nav = () => {
       smooth: "easeInOutQuart",
     });
   };
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       window.scrollY > 80 ? setScrolled(true) : setScrolled(false);
@@ -30,12 +31,12 @@ const Nav = () => {
       window.removeEventListener("scroll", () => {
         window.scrollY > 80 ? setScrolled(true) : setScrolled(false);
       });
-  });
+  }, []);
 
   return (
     <div
-      className={` fixed z-20 rod-glass ${
-        scrolled ? "shadow-md" : ""
+      className={` fixed z-20 ${
+        scrolled ? "shadow-md rod-glass" : ""
       } top-0 w-screen py-6 bg-transparent transition duration-500 px-4 lg:px-16 `}
     >
       <div className="flex items-center justify-between max-w-[1920px] mx-auto">

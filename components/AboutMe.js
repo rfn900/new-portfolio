@@ -11,6 +11,8 @@ import {
   final,
 } from "../animation/animationsOnScroll";
 import { easing } from "../animation/settings";
+import { useActivateSection } from "../customHooks/useActivateSection";
+import { MotionSectionTitle } from "./MotionSectionTitle";
 
 const AboutMe = ({ id }) => {
   const { ref: bl1ref, inView: inView1 } = useInView({
@@ -21,22 +23,25 @@ const AboutMe = ({ id }) => {
     threshold: 0.3,
   });
 
+  const { ref, inView } = useActivateSection(id);
+
   return (
     <motion.div
       id={id}
+      ref={ref}
       exit={{ opacity: 0 }}
       initial="initial"
       animate="animate"
-      className="flex-center mt-24 xs:mt-0 flex-col section"
+      className="py-[96px] flex-center justify-start 2xl:justify-center xs:mt-0 flex-col section"
     >
-      <h2 className="text-4xl font-bold font-mono text-center">Who I am</h2>
-      <div className="flex flex-col gap-4 lg:gap-0 w-full lg:flex-row  items-center lg:items-start mt-16 md:mt-24 h-[900px] lg:h-[500px]">
+      <MotionSectionTitle inView={inView}>Who I am </MotionSectionTitle>
+      <div className="flex flex-col gap-4 lg:gap-0 w-full lg:flex-row  items-center lg:items-start mt-16 2xl:mt-24 h-[900px] lg:h-[500px]">
         <div className="flex flex-col w-full items-center lg:items-end xl:pr-8 h-full lg:mr-12 lg:w-1/2 ">
           <motion.div
             ref={bl1ref}
             initial={initialLeft}
             animate={inView1 ? final : initialLeft}
-            transition={{ duration: 0.6, ease: easing }}
+            transition={{ duration: 0.6, delay: 0.2, ease: easing }}
             className="flex flex-col overflow-hidden max-w-[360px] md:max-w-[480px] gap-8 bg-transparent relative dark:bg-themeGray-dark p-4 rounded-xl w-full lg:w-[500px] h-full"
           >
             <div className="absolute inset-0 opacity-50 bg-themeGray-mediumLight dark:hidden filter blur-xl"></div>
@@ -91,7 +96,7 @@ const AboutMe = ({ id }) => {
           ref={bl2ref}
           initial={initialRight}
           animate={inView2 ? final : initialRight}
-          transition={{ duration: 0.6, ease: easing }}
+          transition={{ duration: 0.6, delay: 0.3, ease: easing }}
           className="bg-themeGray-light dark:bg-themeGray-dark md:w-[480px] rounded-xl h-full "
         >
           <div className="h-full pt-8 pl-8 pr-4 pb-8">

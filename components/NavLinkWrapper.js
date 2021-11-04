@@ -1,13 +1,14 @@
-import { useContext, useEffect, useState } from "react";
-import { ActiveSectionContext } from "../context/activeSection";
+import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
+import { useActiveSection } from "../context/activeSection";
 export const NavLinkWrapper = ({ toSection, children }) => {
-  const { activeSection, setActiveSection } = useContext(ActiveSectionContext);
+  const { activeSection } = useActiveSection();
   const [isActive, setIsActive] = useState(false);
+
   useEffect(() => {
     activeSection === toSection ? setIsActive(true) : setIsActive(false);
-    console.log(activeSection);
   }, [activeSection, toSection]);
+
   return (
     <p
       className={`group relative cursor-pointer transition ${
@@ -22,7 +23,6 @@ export const NavLinkWrapper = ({ toSection, children }) => {
         &lt;
       </span>
       <Link
-        onClick={() => setActiveSection(toSection)}
         activeClass="active"
         to={toSection}
         spy={true}
