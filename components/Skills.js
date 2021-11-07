@@ -6,6 +6,15 @@ import { easing } from "../animation/settings";
 import { useInView } from "react-intersection-observer";
 import { MotionSectionTitle } from "./MotionSectionTitle";
 
+const skills = [
+  ["Javascript/ES6", "HTML5", "CSS3", "SASS", "Tailwindcss"],
+  ["React", "Nextjs", "React Native"],
+  ["REST", "GraphQL", "MongoDB", "MySQL"],
+  ["Nodejs", "Python/Flask", "PHP"],
+  ["Git", "Docker", "Amazon AWS"],
+  ["Vim", "VSCode", "Adobe Suite"],
+];
+
 const Skills = ({ id }) => {
   const { ref, inView } = useActivateSection(id);
   const { ref: ref2, inView: inView2 } = useInView({
@@ -27,7 +36,7 @@ const Skills = ({ id }) => {
         animate={inView2 ? finalUp : initialDown}
         transition={{ duration: 0.6, delay: 0.3, ease: easing }}
       >
-        <TerminalUI />
+        <TerminalUI skills={skills} />
       </motion.div>
     </motion.div>
   );

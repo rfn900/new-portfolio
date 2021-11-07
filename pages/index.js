@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import { motion } from "framer-motion";
 import { scroller } from "react-scroll";
 import Hero from "../components/Hero";
@@ -7,6 +6,7 @@ import Skills from "../components/Skills";
 import ContactMe from "../components/ContactMe";
 import { HiOutlineChevronDoubleDown } from "react-icons/hi";
 import Projects from "../components/Projects";
+
 export default function Home() {
   function scrollTo() {
     scroller.scrollTo("about", {

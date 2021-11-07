@@ -1,16 +1,6 @@
 import { useState } from "react";
 import { FaAngleRight } from "react-icons/fa";
-import { FaRegHandPointRight } from "react-icons/fa";
-
-const skills = [
-  ["Javascript/ES6", "HTML5", "CSS3", "SASS", "Tailwindcss", "Bootstrap 4"],
-  ["React", "Nextjs", "React Native"],
-  ["REST", "GraphQL", "MongoDB", "MySQL"],
-  ["Nodejs", "Flask"],
-  ["Git", "Docker", "Amazon AWS"],
-  ["Vim/Neovim", "VSCode", "Adobe Suite"],
-  ["Python", "C++"],
-];
+import { FaHandPointRight } from "react-icons/fa";
 
 const oneDarkColors = [
   "bg-[#61afef]",
@@ -24,13 +14,15 @@ const gruvBoxColors = [
   "bg-[#fb4934]",
   "bg-[#fabd2f]",
 ];
-const colorsRange = gruvBoxColors.length;
 
-const TerminalUI = () => {
+const colorsRange = gruvBoxColors.length;
+let count = 0; //This will help me alternate bullet colors
+
+const TerminalUI = ({ skills }) => {
   const [colorTheme, setColorTheme] = useState("onedark");
 
   return (
-    <div className="relative mt-16 pb-12 2xl:mt-24 max-w-[900px] w-full min-h-[500px] rounded-t-2xl rounded-b-lg shadow-xl bg-themeGray-light dark:bg-themeGray-dark overflow-hidden">
+    <div className="relative mt-16 pb-12 2xl:mt-24 max-w-[900px] lg:w-[720px] min-h-[500px] rounded-t-2xl rounded-b-lg shadow-xl bg-themeGray-light dark:bg-themeGray-dark overflow-hidden">
       <div className="w-full h-8 bg-themeGray-mediumLight dark:bg-themeGray-light flex items-center gap-2 px-4 relative">
         <div className="h-4 w-4 rounded-full bg-red-500"></div>
         <div className="h-4 w-4 rounded-full bg-yellow-400"></div>
@@ -41,7 +33,6 @@ const TerminalUI = () => {
       </div>
       <div className="w-full px-2 py-8 flex flex-col gap-8 lg:gap-4 lg:gap-0">
         {skills.map((set, index) => {
-          let count = index; //This will help me alternate bullet colors
           return (
             <div
               key={index}
@@ -73,7 +64,7 @@ const TerminalUI = () => {
       <div className="absolute font-mono bottom-4 right-8 text-sm md:text-base flex gap-4 md:gap-8">
         <span>Color Themes:</span>
         <div className="flex items-center  gap-2">
-          <FaRegHandPointRight
+          <FaHandPointRight
             className={`${colorTheme !== "gruvbox" && "opacity-0"} transition`}
           />
           <span
@@ -84,7 +75,7 @@ const TerminalUI = () => {
           </span>
         </div>
         <div className="flex items-center gap-2">
-          <FaRegHandPointRight
+          <FaHandPointRight
             className={`${colorTheme !== "onedark" && "opacity-0"} transition`}
           />
           <span
