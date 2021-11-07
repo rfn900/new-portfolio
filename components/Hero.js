@@ -5,6 +5,7 @@ import { FaReact } from "react-icons/fa";
 import { SiNextdotjs } from "react-icons/si";
 import { MdOutlineScreenShare } from "react-icons/md";
 import { useActivateSection } from "../customHooks/useActivateSection";
+import { scroller } from "react-scroll";
 import AppButton from "../components/AppButton";
 const easing = [0.6, -0.05, 0.01, 0.99];
 const fadeInUp = {
@@ -28,6 +29,13 @@ const stagger = {
       staggerChildren: 0.1,
     },
   },
+};
+const scrollToProjects = () => {
+  scroller.scrollTo("projects", {
+    duration: 800,
+    delay: 0,
+    smooth: "easeInOutQuart",
+  });
 };
 const Hero = () => {
   const { ref } = useActivateSection("hero");
@@ -61,7 +69,11 @@ const Hero = () => {
             Based in Stockholm
           </motion.h3>
           <motion.div variants={fadeInUp}>
-            <AppButton text="Check My Projects" Icon={MdOutlineScreenShare} />
+            <AppButton
+              clickHandler={scrollToProjects}
+              text="Check My Projects"
+              Icon={MdOutlineScreenShare}
+            />
           </motion.div>
         </motion.div>
       </div>
