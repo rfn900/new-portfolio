@@ -29,11 +29,11 @@ const Skills = ({ id }) => {
       ref={ref}
       className="py-[96px] flex-center justify-start 2xl:justify-center flex-col section"
     >
-      <MotionSectionTitle inView={inView}>Things I can do</MotionSectionTitle>
+      <MotionSectionTitle inView={inView}>ls my-skills/</MotionSectionTitle>
       <motion.div
         ref={ref2}
         initial={initialDown}
-        animate={inView2 ? finalUp : initialDown}
+        animate={inView2 && finalUp}
         transition={{ duration: 0.6, delay: 0.3, ease: easing }}
       >
         <TerminalUI skills={skills} />

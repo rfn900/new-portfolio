@@ -14,9 +14,9 @@ const gruvBoxColors = [
   "bg-[#fb4934]",
   "bg-[#fabd2f]",
 ];
+let count = 0; //This will help me alternate bullet colors
 
 const colorsRange = gruvBoxColors.length;
-let count = 0; //This will help me alternate bullet colors
 
 const TerminalUI = ({ skills }) => {
   const [colorTheme, setColorTheme] = useState("onedark");
@@ -36,24 +36,25 @@ const TerminalUI = ({ skills }) => {
           return (
             <div
               key={index}
-              className="px-2 flex mt-4 items-center flex-wrap gap-4 font-mono text-themeGray-dark"
+              className="px-2 flex mt-4 items-center flex-wrap gap-3 lg:gap-4 font-mono text-themeGray-dark"
             >
-              <FaAngleRight className="text-themeGray-dark dark:text-themeGray-light h-6 w-6 mb-px" />
+              <FaAngleRight className="text-themeGray-dark dark:text-themeGray-light h-4 w-4 mb-px" />
               {set.map((skill, ix) => {
                 count++;
                 return (
-                  <span
+                  <motion.span
                     key={ix}
+                    whileHover={{ scale: 1.2 }}
                     className={`${
                       colorTheme === "gruvbox" &&
                       gruvBoxColors[count % colorsRange]
                     } ${
                       colorTheme === "onedark" &&
                       oneDarkColors[count % colorsRange]
-                    } px-2 rounded-full transition bg-opacity-75 dark:bg-opacity-100`}
+                    } px-2 rounded-full cursor-default transition bg-opacity-75 dark:bg-opacity-100`}
                   >
                     {skill}
-                  </span>
+                  </motion.span>
                 );
               })}
             </div>
