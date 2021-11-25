@@ -54,7 +54,7 @@ const Hero = () => {
         <motion.div variants={stagger}>
           <motion.p
             variants={fadeInUp}
-            className="w-[220px] py-1 px-4 text-xs font-bold text-center text-yellow-400 border-2 border-yellow-400 lg:text-base 2xl:text-base"
+            className="w-[220px] py-1 px-4 text-xs font-bold text-center text-altOrange-400 dark:text-yellow-400 border-2 border-altOrange-400 dark:border-yellow-400 lg:text-base 2xl:text-base"
           >
             Rodrigo Nascimento
           </motion.p>

@@ -50,13 +50,13 @@ export default function Home() {
           href="https://drive.google.com/file/d/1pRK-J-4Uzs-yZOw_koE7l9OncyK8cHer/view"
           target="_blank"
         >
-          <VscFilePdf className="text-themeGray-base dark:text-themeGray-light w-7 h-7" />
+          <VscFilePdf className="text-themeGray-base transition hover:opacity-75 dark:hover:opacity-100 dark:hover:text-yellow-200 dark:text-themeGray-light w-7 h-7" />
         </a>
         <a href="https://github.com/rfn900" target="_blank">
-          <BsGithub className="text-themeGray-base dark:text-themeGray-light w-6 h-6" />
+          <BsGithub className="text-themeGray-base dark:text-themeGray-light transition hover:opacity-75 dark:hover:opacity-100 dark:hover:text-yellow-200 w-6 h-6" />
         </a>
         <a href="https://linkedin.com/in/rodrigofnascimento" target="_blank">
-          <BsLinkedin className="text-themeGray-base dark:text-themeGray-light w-6 h-6" />
+          <BsLinkedin className="text-themeGray-base hover:opacity-75 dark:hover:opacity-100 dark:hover:text-yellow-200 dark:text-themeGray-light w-6 h-6" />
         </a>
         <div className="w-px h-32 rounded-xl bg-themeGray-medium dark:bg-themeGray-light"></div>
       </motion.div>

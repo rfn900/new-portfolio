@@ -11,7 +11,7 @@ const AppButton = ({ Icon, text, clickHandler = null, customClasses = "" }) => {
       {text}
       <div
         className={`w-px h-8 ml-2 ${
-          isSecondaryBtn ? "bg-yellow-400" : "bg-themeGray-dark"
+          isSecondaryBtn ? " bg-yellow-400" : "bg-themeGray-dark"
         }`}
       ></div>
       <Icon className="w-6 h-6 mt-px ml-2" />

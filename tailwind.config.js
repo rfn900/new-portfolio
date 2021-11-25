@@ -28,7 +28,13 @@ module.exports = {
           darker: "#24262A",
         },
         altYellow: {
-          400: "#F9D783",
+          400: "#F0C149",
+        },
+        altGreen: {
+          400: "#276F6B",
+        },
+        altOrange: {
+          400: "#F2643F",
         },
       },
     },

@@ -62,8 +62,8 @@ const AboutMe = ({ id }) => {
             </div>
             <div className="z-10 flex items-center w-full py-4 pr-2 shadow-md lg:px-2 gap-0 lg:gap-2 bg-themeGray-light dark:bg-themeGray-darker rounded-xl h-1/3 transition hover:shadow-xl">
               <div className="px-4">
-                <div className="w-12 h-12 bg-green-400 rounded-full lg:h-16 lg:w-16 flex-center">
-                  <HiOutlineViewGrid className="w-8 h-8 text-themeGray-dark lg:h-10 lg:w-10" />
+                <div className="w-12 h-12 bg-green-600 rounded-full lg:h-16 lg:w-16 flex-center">
+                  <HiOutlineViewGrid className="w-8 h-8 text-themeGray-medium lg:h-10 lg:w-10" />
                 </div>
               </div>
               <div className="w-3/4 lg:w-5/6">
@@ -77,8 +77,8 @@ const AboutMe = ({ id }) => {
             </div>
             <div className="z-10 flex items-center w-full py-4 pr-2 shadow-md lg:px-2 gap-0 lg:gap-2 bg-themeGray-light dark:bg-themeGray-darker rounded-xl h-1/3 transition hover:shadow-xl">
               <div className="px-4">
-                <div className="h-12 w-12 lg:h-16 lg:w-16 flex-center rounded-full bg-[#e8e8e8] dark:bg-themeGray-light">
-                  <MdSyncProblem className="w-8 h-8 text-themeGray-dark lg:h-10 lg:w-10" />
+                <div className="h-12 w-12 lg:h-16 lg:w-16 flex-center rounded-full bg-altOrange-400 dark:bg-[#e8e8e8] dark:bg-themeGray-light">
+                  <MdSyncProblem className="w-8 h-8 text-[#e8e8e8] dark:text-themeGray-dark lg:h-10 lg:w-10" />
                 </div>
               </div>
               <div className="w-3/4 lg:w-5/6">
