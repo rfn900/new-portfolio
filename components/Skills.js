@@ -5,15 +5,7 @@ import { initialDown, finalUp } from "../animation/animationsOnScroll";
 import { easing } from "../animation/settings";
 import { useInView } from "react-intersection-observer";
 import { MotionSectionTitle } from "./MotionSectionTitle";
-
-const skills = [
-  ["Javascript/ES6", "HTML5", "CSS3", "SASS", "Tailwindcss"],
-  ["React", "Nextjs", "React Native"],
-  ["REST", "GraphQL", "MongoDB", "MySQL"],
-  ["Nodejs", "Python/Flask", "PHP"],
-  ["Git", "Docker", "Amazon AWS"],
-  ["Vim", "VSCode", "Adobe Suite"],
-];
+import { skills } from "../data/content";
 
 const Skills = ({ id }) => {
   const { ref, inView } = useActivateSection(id);

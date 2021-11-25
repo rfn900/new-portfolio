@@ -1,15 +1,15 @@
 import { useEffect, useContext, useState } from "react";
-import { BsGithub } from "react-icons/bs";
-import { BsLinkedin } from "react-icons/bs";
+import { HiMail } from "react-icons/hi";
 import { MdLightMode } from "react-icons/md";
 import { BsTriangleFill } from "react-icons/bs";
 import { HiMenu } from "react-icons/hi";
 import { FaAngleRight } from "react-icons/fa";
 import { FaMoon } from "react-icons/fa";
+import { animateScroll as scroll, scroller } from "react-scroll";
 import { DarkModeContext } from "../context/darkMode";
 import { ActiveSectionContext } from "../context/activeSection";
 import { NavLinkWrapper } from "./NavLinkWrapper";
-import { animateScroll as scroll } from "react-scroll";
+import AppButton from "../components/AppButton";
 const Nav = () => {
   const { darkMode, setDarkMode } = useContext(DarkModeContext);
   const { setActiveSection } = useContext(ActiveSectionContext);
@@ -22,6 +22,14 @@ const Nav = () => {
       smooth: "easeInOutQuart",
     });
   };
+
+  function scrollToContact() {
+    scroller.scrollTo("contactme", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
+  }
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -61,22 +69,18 @@ const Nav = () => {
           <NavLinkWrapper toSection="about">About</NavLinkWrapper>
           <NavLinkWrapper toSection="skills">Skills</NavLinkWrapper>
           <NavLinkWrapper toSection="projects">Projects</NavLinkWrapper>
-          <NavLinkWrapper toSection="contactme">Contact Me</NavLinkWrapper>
           {/*
+          TODO
           <NavLinkWrapper toSection="contactme">Blog</NavLinkWrapper>
           */}
         </div>
         <div className="flex gap-4 lg:gap-8 items-center">
-          <a href="https://github.com/rfn900" target="_blank">
-            <div className="hidden lg:flex gap-4 cursor-pointer">
-              <BsGithub className="text-themeGray-dark dark:text-themeGray-light w-6 h-6 transition " />
-            </div>
-          </a>
-          <a href="https://linkedin.com/in/rodrigofnascimento" target="_blank">
-            <div className="hidden lg:flex gap-4 cursor-pointer">
-              <BsLinkedin className="text-themeGray-dark dark:text-themeGray-light w-6 h-6 transition " />
-            </div>
-          </a>
+          <AppButton
+            text="Contact Me"
+            Icon={HiMail}
+            customClasses="btn-primary py-1.5 hidden md:flex"
+            clickHandler={() => scrollToContact()}
+          />
           <div
             onClick={() => setDarkMode(!darkMode)}
             className="relative group flex bg-gradient-to-br from-themeGray-base shadow to-themeGray-medium dark:from-yellow-400 dark:to-themeGray-light transition cursor-pointer rounded-lg lg:rounded-xl w-8 h-8 lg:w-12 lg:h-12 items-center justify-center"

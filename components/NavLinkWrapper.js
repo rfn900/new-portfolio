@@ -17,7 +17,7 @@ export const NavLinkWrapper = ({ toSection, children }) => {
     <p
       className={`group relative cursor-pointer transition ${
         isActive ? "text-yellow-400" : ""
-      } `}
+      } hover:opacity-75`}
     >
       <span
         className={`absolute top-0 -left-4 text-yellow-400 pr-px transition ${

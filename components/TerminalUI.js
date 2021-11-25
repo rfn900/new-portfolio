@@ -1,14 +1,16 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { FaAngleRight } from "react-icons/fa";
 import { FaHandPointRight } from "react-icons/fa";
+//import { gruvBoxColors } from "../data/content";
 
-const oneDarkColors = [
+export const oneDarkColors = [
   "bg-[#61afef]",
   "bg-[#c678dd]",
   "bg-[#98c379]",
   "bg-[#e5c07b]",
 ];
-const gruvBoxColors = [
+export const gruvBoxColors = [
   "bg-[#fe8019]",
   "bg-[#b8bb26]",
   "bg-[#fb4934]",
