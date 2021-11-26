@@ -31,7 +31,7 @@ export default function Home() {
         onClick={() => {
           scrollTo();
         }}
-        className="absolute hidden cursor-pointer md:flex-center opacity-50 border-themeGray-medium dark:border-themeGray-light -translate-y-20 rounded-full left-1/2 w-12 h-12 border-2 transform -translate-x-1/2 "
+        className="absolute hidden cursor-pointer lg:flex-center opacity-50 border-themeGray-medium dark:border-themeGray-light -translate-y-32 xl:-translate-y-20 rounded-full left-1/2 w-12 h-12 border-2 transform -translate-x-1/2 "
       >
         <HiOutlineChevronDoubleDown className="mt-1 animate-bounce left-1/2 w-4 h-4 text-themeGray-base dark:text-themeGray-light" />
       </motion.a>

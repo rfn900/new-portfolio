@@ -42,15 +42,16 @@ const scrollToProjects = () => {
 const Hero = () => {
   const { ref } = useActivateSection("hero");
   const darkModeIllustration = "/me-illustration.png";
+
   return (
     <motion.div
       ref={ref}
       exit={{ opacity: 0 }}
       initial="initial"
       animate="animate"
-      className="relative flex flex-col items-start pt-32 section md:py-12 md:items-center xl:px-36 md:flex-row"
+      className="relative flex flex-col items-start pt-32 section lg:py-12 lg:items-center xl:px-36 lg:flex-row"
     >
-      <div className="lg:h-[600px] flex items-center lg:flex-1 justify-center">
+      <div className="lg:h-[600px] flex items-center lg:flex-1 justify-center md:mt-12 lg:mt-0">
         <motion.div variants={stagger}>
           <motion.p
             variants={fadeInUp}
@@ -60,7 +61,7 @@ const Hero = () => {
           </motion.p>
           <motion.h2
             variants={fadeInUp}
-            className="mt-6 font-mono text-2xl font-bold md:mt-12 sm:text-3xl lg:text-4xl 2xl:text-6xl"
+            className="mt-6 font-mono text-2xl font-bold md:mt-12 sm:text-3xl md:text-4xl 2xl:text-6xl"
           >
             Fullstack Developer
           </motion.h2>
@@ -88,16 +89,20 @@ const Hero = () => {
         <div className="relative flex-center">
           <div className="absolute w-6 h-6 bg-yellow-300 rounded-full lg:h-12 lg:w-12 top-0 left-8 md:-left-8  rod-float z-20 dark:bg-themeGray-darker"></div>
           <div className="absolute shadow-lg rod-float flex-center top-28 lg:top-48 right-8 lg:-right-10 w-[60px] h-[60px] lg:h-[120px] z-10 lg:w-[120px] bg-[#fafafa] dark:bg-themeGray-darker rounded-full">
-            <SiPython className="text-indigo-500 h-7 w-7 lg:h-14 lg:w-14" />
+            <SiPython className="text-[#c678dd] h-7 w-7 lg:h-14 lg:w-14" />
           </div>
           <div className="absolute rod-float-delay-3 shadow-lg -top-10 z-10 right-[80px] lg:right-[60px] w-[80px] h-[80px] lg:h-[140px] flex-center lg:w-[140px] bg-[#fafafa] dark:bg-themeGray-darker rounded-full">
-            <FaNodeJs className="text-green-500 w-[36px] h-[36px] lg:w-[72px] lg:h-[72px]" />
+            <FaNodeJs
+              className={` text-[#98c379] w-[36px] h-[36px] lg:w-[72px] lg:h-[72px]`}
+            />
           </div>
           <div className="absolute z-10 rod-float-delay-2 shadow-lg top-[220px] lg:top-[360px] right-[52px] lg:right-[100px] h-[80px] w-[80px] lg:h-[120px] z-10 flex-center lg:w-[120px] bg-[#fafafa] dark:bg-themeGray-darker rounded-full">
-            <SiNextdotjs className="w-10 h-10 text-themeGray-dark dark:text-themeGray-light lg:w-14 lg:h-14" />
+            <SiNextdotjs
+              className={`w-10 h-10 text-[#e5c07b] lg:w-14 lg:h-14`}
+            />
           </div>
           <div className="absolute z-10 rod-float-delay-1 rod-float shadow-lg top-[180px] lg:top-[320px] left-0 lg:-left-8 h-[80px] lg:h-[120px] flex-center w-[80px] lg:w-[120px] bg-[#fafafa] dark:bg-themeGray-darker rounded-full">
-            <FaReact className="w-10 h-10 text-blue-600 lg:w-14 lg:h-14" />
+            <FaReact className={`w-10 h-10 text-[#61afef] lg:w-14 lg:h-14 `} />
           </div>
           <div className="relative w-4/5 md:w-full p-0 flex items-end">
             <div className="w-full h-[340px] md:h-[440px] absolute bg-[#f0f0f0] dark:bg-themeGray-dark bottom-1.5 rounded-t-full"></div>

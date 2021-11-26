@@ -78,7 +78,7 @@ const Nav = () => {
           <AppButton
             text="Contact Me"
             Icon={HiMail}
-            customClasses="btn-primary py-1.5 hidden md:flex"
+            customClasses="btn-primary py-1.5 hidden lg:flex"
             clickHandler={() => scrollToContact()}
           />
           <div
