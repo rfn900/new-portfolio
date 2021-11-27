@@ -34,11 +34,11 @@ const Projects = ({ id }) => {
         const evenRow = index % 2 === 0;
         return (
           <div
+            ref={blref}
             key={index}
-            className={`flex flex-col w-full h-full mt-20 lg:mt-12 lg:flex-row`}
+            className={`flex flex-col w-full mt-20 py-12 lg:mt-12 lg:flex-row`}
           >
             <motion.div
-              ref={blref}
               initial={initialLeft}
               animate={inViewLoop && final}
               transition={{ duration: 0.6, delay: 0.2, ease: easing }}
@@ -57,7 +57,7 @@ const Projects = ({ id }) => {
               transition={{ duration: 0.6, delay: 0.3, ease: easing }}
               className={`p-2 lg:px-12 ${
                 evenRow ? "2xl:pr-36" : "2xl:pl-36"
-              } w-full mt-16 lg:mt-0 lg:w-1/2 h-[480px] flex flex-col justify-center`}
+              } w-full mt-32 lg:mt-0 lg:w-1/2 h-[480px] flex flex-col justify-center`}
             >
               <p className="text-yellow-400 underline">{project.subtitle}</p>
               <h2 className="mt-4 font-mono text-3xl font-bold tracking-wider uppercase">

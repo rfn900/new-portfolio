@@ -16,7 +16,7 @@ export const MotionSectionTitle = ({ children }) => {
       initial={{ opacity: 0 }}
       animate={inView && { opacity: 1 }}
       transition={{ duration: 0.6, delay: 0.15, ease: easing }}
-      className="flex mt-12 items-center gap-2 lg:gap-4 text-2xl md:text-3xl font-mono text-themeGray-dark dark:text-themeGray-light"
+      className="flex mt-12 items-center gap-2 lg:gap-4 text-xl md:text-3xl font-mono text-themeGray-dark dark:text-themeGray-light"
     >
       <div className="h-8 relative flex pr-6 pl-1 items-center rounded text-themeGray-dark dark:text-themeGray-light bg-themeGray-light dark:bg-themeGray-base">
         <FaAngleRight className="mt-1" />

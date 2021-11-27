@@ -55,7 +55,7 @@ const Hero = () => {
         <motion.div variants={stagger}>
           <motion.p
             variants={fadeInUp}
-            className="w-[220px] py-1 px-4 text-xs font-bold text-center text-altOrange-400 dark:text-yellow-400 border-2 border-altOrange-400 dark:border-yellow-400 lg:text-base 2xl:text-base"
+            className="w-[220px] py-1 px-4 text-xs font-bold text-center text-altYellow-400 border-altYellow-400 dark:text-yellow-400 border-2 dark:border-yellow-400 lg:text-base 2xl:text-base"
           >
             Rodrigo Nascimento
           </motion.p>
@@ -88,7 +88,7 @@ const Hero = () => {
       >
         <div className="relative flex-center">
           <div className="absolute w-6 h-6 bg-yellow-300 rounded-full lg:h-12 lg:w-12 top-0 left-8 md:-left-8  rod-float z-20 dark:bg-themeGray-darker"></div>
-          <div className="absolute shadow-lg rod-float flex-center top-28 lg:top-48 right-8 lg:-right-10 w-[60px] h-[60px] lg:h-[120px] z-10 lg:w-[120px] bg-[#fafafa] dark:bg-themeGray-darker rounded-full">
+          <div className="absolute shadow-lg rod-float flex-center top-20 lg:top-48 right-8 lg:-right-10 w-[60px] h-[60px] lg:h-[120px] z-10 lg:w-[120px] bg-[#fafafa] dark:bg-themeGray-darker rounded-full">
             <SiPython className="text-[#c678dd] h-7 w-7 lg:h-14 lg:w-14" />
           </div>
           <div className="absolute rod-float-delay-3 shadow-lg -top-10 z-10 right-[80px] lg:right-[60px] w-[80px] h-[80px] lg:h-[140px] flex-center lg:w-[140px] bg-[#fafafa] dark:bg-themeGray-darker rounded-full">
@@ -96,16 +96,16 @@ const Hero = () => {
               className={` text-[#98c379] w-[36px] h-[36px] lg:w-[72px] lg:h-[72px]`}
             />
           </div>
-          <div className="absolute z-10 rod-float-delay-2 shadow-lg top-[220px] lg:top-[360px] right-[52px] lg:right-[100px] h-[80px] w-[80px] lg:h-[120px] z-10 flex-center lg:w-[120px] bg-[#fafafa] dark:bg-themeGray-darker rounded-full">
+          <div className="absolute z-10 rod-float-delay-2 shadow-lg top-[170px] md:top-[240px] lg:top-[360px] right-[52px] lg:right-[100px] h-[80px] w-[80px] lg:h-[120px] z-10 flex-center lg:w-[120px] bg-[#fafafa] dark:bg-themeGray-darker rounded-full">
             <SiNextdotjs
               className={`w-10 h-10 text-[#e5c07b] lg:w-14 lg:h-14`}
             />
           </div>
-          <div className="absolute z-10 rod-float-delay-1 rod-float shadow-lg top-[180px] lg:top-[320px] left-0 lg:-left-8 h-[80px] lg:h-[120px] flex-center w-[80px] lg:w-[120px] bg-[#fafafa] dark:bg-themeGray-darker rounded-full">
+          <div className="absolute z-10 rod-float-delay-1 rod-float shadow-lg top-[140px] md:top-[180px] lg:top-[320px] left-0 lg:-left-8 h-[80px] lg:h-[120px] flex-center w-[80px] lg:w-[120px] bg-[#fafafa] dark:bg-themeGray-darker rounded-full">
             <FaReact className={`w-10 h-10 text-[#61afef] lg:w-14 lg:h-14 `} />
           </div>
-          <div className="relative w-4/5 md:w-full p-0 flex items-end">
-            <div className="w-full h-[340px] md:h-[440px] absolute bg-[#f0f0f0] dark:bg-themeGray-dark bottom-1.5 rounded-t-full"></div>
+          <div className="relative w-3/5 md:w-4/5 lg:w-full p-0 flex items-end">
+            <div className="w-full h-[220px] md:h-[340px] lg:h-[440px] absolute bg-[#f0f0f0] dark:bg-themeGray-dark bottom-1.5 rounded-t-full"></div>
             <Image
               src={darkModeIllustration}
               alt="Illustration of the author"

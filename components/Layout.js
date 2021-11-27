@@ -14,8 +14,11 @@ const Layout = ({ children }) => {
     >
       <Head>
         <title>Rodrigo Nascimento's Portfolio</title>
-        <meta name="description" content="Homepage for MARSian Online Group" />
-        <link rel="icon" href="/MOG_logo.png" />
+        <meta
+          name="description"
+          content="Personal web developer portfolio from Rodrigo Nascimento"
+        />
+        <link rel="icon" href="/rod-favicon.png" />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.css"

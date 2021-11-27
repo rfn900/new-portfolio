@@ -9,7 +9,7 @@ export default async (req, res) => {
     });
     return;
   }
-  console.log(process.env.EMAIL_USER, process.env.EMAIL_PASSWORD);
+
   const mailIt = async () => {
     let transporter = nodemailer.createTransport({
       host: "marsianog.com",
@@ -28,7 +28,7 @@ export default async (req, res) => {
         typeof subject === "undefined" ? "no subject" : subject
       }`, // Subject line
       text: `${message}\n\nFrom: ${name}\nEmail: ${email}`, // plain text body
-      html: `<b>Message Body: </b><br>"<em>${message}</em>"<br><br><b>Form: </b>${name}<br><b>Email: </b> ${email}`, // plain text body
+      html: `<b>Message Body: </b><br>"<em>${message}</em>"<br><br><b>From: </b>${name}<br><b>Email: </b> ${email}`, // plain text body
     });
 
     return res.status(200).json({

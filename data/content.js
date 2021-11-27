@@ -21,7 +21,7 @@ export const projects = [
     repoLink: "https://github.com/rfn900/todos",
   },
   {
-    title: "FitnessFia Landing Page",
+    title: "Landing Page",
     subtitle: "Design and Development",
     gif: "/fitnessfia.gif",
     screen: "/fitnessfia-screen.png",
@@ -29,7 +29,6 @@ export const projects = [
       "Wordpress",
       "PHP",
       "Javascript",
-      "Child-Theme Development",
       "Tailwindcss",
       "Responsive Design",
     ],
