@@ -1,56 +1,57 @@
-import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import axios from "axios";
-import { FaAngleRight } from "react-icons/fa";
-import { RiSendPlaneFill } from "react-icons/ri";
-import { useActivateSection } from "../customHooks/useActivateSection";
-import AppButton from "./AppButton";
-import { MotionSectionTitle } from "./MotionSectionTitle";
-import { formValidateMessage } from "../utils/formValidates";
-import SubmitMessage from "../components/SubmitMessage";
-import { easing } from "../animation/settings";
+import { useState, useRef, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import axios from 'axios'
+import { FaAngleRight } from 'react-icons/fa'
+import { RiSendPlaneFill } from 'react-icons/ri'
+import { useActivateSection } from '../customHooks/useActivateSection'
+import AppButton from './AppButton'
+import { MotionSectionTitle } from './MotionSectionTitle'
+import { formValidateMessage } from '../utils/formValidates'
+import SubmitMessage from '../components/SubmitMessage'
+import { easing } from '../animation/settings'
 
 const ContactMe = ({ id }) => {
-  const { ref, inView } = useActivateSection(id);
-  const formRef = useRef();
-  const [formFields, setFormFields] = useState({});
-  const [submitStatus, setSubmitStatus] = useState(null);
-
+  const { ref, inView } = useActivateSection(id)
+  const formRef = useRef()
+  const [formFields, setFormFields] = useState({})
+  const [submitStatus, setSubmitStatus] = useState(null)
+  let errorMsgTimeOut = null
   useEffect(() => {
-    setTimeout(() => {
-      setSubmitStatus(null);
-    }, 2600);
-  }, [submitStatus]);
+    errorMsgTimeOut = setTimeout(() => {
+      setSubmitStatus(null)
+    }, 2600)
+  }, [submitStatus])
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    const validateMessage = formValidateMessage(formFields);
-    if (validateMessage === "validated") {
+    e.preventDefault()
+    const validateMessage = formValidateMessage(formFields)
+    clearTimeout(errorMsgTimeOut)
+    if (validateMessage === 'validated') {
       try {
-        const res = await axios.post("/api/hello", formFields);
-        formRef.current.reset();
+        const res = await axios.post('/api/hello', formFields)
+        formRef.current.reset()
         setSubmitStatus({
           validPayload: true,
           validateMessage: res.data.message,
-        });
+        })
       } catch (e) {
         setSubmitStatus({
           validPayload: false,
           validateMessage: e.response.data.message,
-        });
+        })
       }
     } else
       setSubmitStatus({
         validPayload: false,
         validateMessage,
-      });
-  };
+      })
+  }
 
   const handleChange = (value, type) => {
-    const payload = { ...formFields };
-    payload[type] = value;
-    setFormFields(payload);
-  };
+    const payload = { ...formFields }
+    payload[type] = value
+    setFormFields(payload)
+  }
 
   return (
     <div
@@ -128,7 +129,7 @@ const ContactMe = ({ id }) => {
         )}
       </AnimatePresence>
     </div>
-  );
-};
+  )
+}
 
-export default ContactMe;
+export default ContactMe

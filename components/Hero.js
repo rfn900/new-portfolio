@@ -1,15 +1,15 @@
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { SiPython } from "react-icons/si";
-import { FaNodeJs } from "react-icons/fa";
-import { FaReact } from "react-icons/fa";
-import { SiNextdotjs } from "react-icons/si";
-import { MdOutlineScreenShare } from "react-icons/md";
-import { useActivateSection } from "../customHooks/useActivateSection";
-import { scroller } from "react-scroll";
-import AppButton from "../components/AppButton";
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { SiPython } from 'react-icons/si'
+import { FaNodeJs } from 'react-icons/fa'
+import { FaReact } from 'react-icons/fa'
+import { SiNextdotjs } from 'react-icons/si'
+import { MdOutlineScreenShare } from 'react-icons/md'
+import { useActivateSection } from '../customHooks/useActivateSection'
+import { scroller } from 'react-scroll'
+import AppButton from '../components/AppButton'
 
-const easing = [0.6, -0.05, 0.01, 0.99];
+const easing = [0.6, -0.05, 0.01, 0.99]
 const fadeInUp = {
   initial: {
     y: 60,
@@ -23,7 +23,7 @@ const fadeInUp = {
       ease: easing,
     },
   },
-};
+}
 
 const stagger = {
   animate: {
@@ -31,17 +31,17 @@ const stagger = {
       staggerChildren: 0.1,
     },
   },
-};
+}
 const scrollToProjects = () => {
-  scroller.scrollTo("projects", {
+  scroller.scrollTo('projects', {
     duration: 800,
     delay: 0,
-    smooth: "easeInOutQuart",
-  });
-};
+    smooth: 'easeInOutQuart',
+  })
+}
 const Hero = () => {
-  const { ref } = useActivateSection("hero");
-  const darkModeIllustration = "/me-illustration.png";
+  const { ref } = useActivateSection('hero')
+  const darkModeIllustration = '/me-illustration.png'
 
   return (
     <motion.div
@@ -61,7 +61,7 @@ const Hero = () => {
           </motion.p>
           <motion.h2
             variants={fadeInUp}
-            className="mt-6 font-mono text-2xl font-bold md:mt-12 sm:text-3xl md:text-4xl 2xl:text-6xl"
+            className="mt-6 font-mono text-2xl font-bold md:mt-12 sm:text-3xl md:text-5xl 2xl:text-6xl"
           >
             Fullstack Developer
           </motion.h2>
@@ -116,7 +116,7 @@ const Hero = () => {
         </div>
       </motion.div>
     </motion.div>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero
