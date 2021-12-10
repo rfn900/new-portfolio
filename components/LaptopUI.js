@@ -11,13 +11,13 @@ export const LaptopUI = ({ gif, screen, alt }) => {
       <div className="absolute top-[6px] left-1/2 transform -translate-x-1/2 w-2 h-2 rounded-full bg-themeGray-medium"></div>
       <div
         onClick={() => setGifPlay((gPlay) => !gPlay)}
-        className="group cursor-pointer w-full h-full bg-themeGray-dark overflow-x-hidden overflow-y-scroll relative rounded-lg"
+        className="group cursor-pointer w-full h-full bg-themeGray-dark overflow-hidden relative rounded-lg"
       >
         <div>
           {gifPlay ? (
             <Image
-              width={641}
-              height={400}
+              width={600}
+              height={375}
               objectFit="cover"
               src={gif}
               alt={alt}
@@ -26,7 +26,7 @@ export const LaptopUI = ({ gif, screen, alt }) => {
           ) : (
             <Image
               width={600}
-              height={400}
+              height={375}
               src={screen}
               alt={alt}
               className="absolute inset-0"

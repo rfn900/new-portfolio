@@ -7,10 +7,10 @@ export const projects = [
     screen: '/mog-screen.png',
     projectTech: ['Nextjs', 'Tailwindcss', 'Mongodb', 'JWT', 'Adobe XD'],
     text: [
-      'This is a project as a consultant done for Marsian Online Group AB. I took over the entire project, from design do development.',
+      'This is a project I have done as a consultant for Marsian Online Group AB. I was responsible for creating the design system, to chose the tech stack according to business needs, and develop the final product.',
       "On top of building the website, I developed a business dashboard for tracking the company's revenue by pulling data from 6 different REST APIs, such as affiliate networks and ad providers.",
     ],
-    liveLink: 'https://dev-marsianog.vercel.app',
+    liveLink: 'https://marsianog.com',
     repoLink: 'https://github.com/rfn900/mog',
   },
   {
@@ -59,7 +59,7 @@ export const projects = [
     gif: '/todos.gif',
     screen: '/todos-screen.png',
     projectTech: [
-      'Nextjs',
+      'React',
       'Tailwindcss',
       'Nodejs',
       'Express',
