@@ -1,29 +1,30 @@
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { HiOutlineCode } from "react-icons/hi";
-import { HiOutlineViewGrid } from "react-icons/hi";
-import { MdSyncProblem } from "react-icons/md";
-import { MdPictureAsPdf } from "react-icons/md";
-import AppButton from "./AppButton";
+import Link from 'next/link'
+import { motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
+import { HiOutlineCode } from 'react-icons/hi'
+import { HiOutlineViewGrid } from 'react-icons/hi'
+import { MdSyncProblem } from 'react-icons/md'
+import { MdPictureAsPdf } from 'react-icons/md'
+import AppButton from './AppButton'
 import {
   initialLeft,
   initialRight,
   final,
-} from "../animation/animationsOnScroll";
-import { easing } from "../animation/settings";
-import { useActivateSection } from "../customHooks/useActivateSection";
-import { MotionSectionTitle } from "./MotionSectionTitle";
+} from '../animation/animationsOnScroll'
+import { easing } from '../animation/settings'
+import { useActivateSection } from '../customHooks/useActivateSection'
+import { MotionSectionTitle } from './MotionSectionTitle'
 
 const AboutMe = ({ id }) => {
   const { ref: bl1ref, inView: inView1 } = useInView({
     threshold: 0.3,
-  });
+  })
 
   const { ref: bl2ref, inView: inView2 } = useInView({
     threshold: 0.3,
-  });
+  })
 
-  const { ref, inView } = useActivateSection(id);
+  const { ref, inView } = useActivateSection(id)
 
   return (
     <motion.div
@@ -115,16 +116,21 @@ const AboutMe = ({ id }) => {
               Currently, I am finishing a Fullstack Web Developer course (YH) at
               Nackademin in Stockholm, Sweden.
             </p>
-            <AppButton
-              text="Download My CV"
-              Icon={MdPictureAsPdf}
-              customClasses="btn-primary mt-12"
-            />
+            <a
+              href="https://drive.google.com/file/d/1pRK-J-4Uzs-yZOw_koE7l9OncyK8cHer/view"
+              target="_blank"
+            >
+              <AppButton
+                text="Download My CV"
+                Icon={MdPictureAsPdf}
+                customClasses="btn-primary mt-12"
+              />
+            </a>
           </div>
         </motion.div>
       </div>
     </motion.div>
-  );
-};
+  )
+}
 
-export default AboutMe;
+export default AboutMe
