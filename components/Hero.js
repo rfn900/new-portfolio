@@ -61,13 +61,13 @@ const Hero = () => {
           </motion.p>
           <motion.h2
             variants={fadeInUp}
-            className="mt-6 font-mono text-2xl font-bold md:mt-12 sm:text-3xl md:text-5xl 2xl:text-6xl"
+            className="mt-6 font-mono text-3xl font-bold md:mt-12 sm:text-4xl md:text-5xl 2xl:text-6xl"
           >
-            Fullstack Developer
+            Fullstack Web Developer
           </motion.h2>
           <motion.h3
             variants={fadeInUp}
-            className="mt-2 text-xl font-light md:mt-4 2xl:text-2xl"
+            className="mt-4 text-xl font-light md:mt-4 2xl:text-2xl"
           >
             Based in Stockholm
           </motion.h3>
