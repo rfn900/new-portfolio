@@ -1,7 +1,7 @@
 // Content for Projects component
 export const projects = [
   {
-    title: 'Website and Business Dashboard',
+    title: 'Website - Web App',
     subtitle: 'Marsian Online Group AB',
     gif: '/mog.gif',
     screen: '/mog-screen.png',
