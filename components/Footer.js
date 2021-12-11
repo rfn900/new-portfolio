@@ -1,5 +1,5 @@
-import { HiMail } from "react-icons/hi";
-import { HiPhone } from "react-icons/hi";
+import { HiMail } from 'react-icons/hi'
+import { HiPhone } from 'react-icons/hi'
 const Footer = () => {
   return (
     <div className="flex flex-col gap-8 items-center text-themeGray-medium dark:text-themeGray-light p-12 bg-themeGray-light dark:bg-themeGray-dark">
@@ -13,15 +13,15 @@ const Footer = () => {
           <span>rfn900@gmail.com</span>
         </div>
       </div>
-      <div className="text-themeGray-medium text-sm dark:text-themeGray-mediumLight flex gap-4 items-center">
-        <div className="">
+      <div className="text-themeGray-medium text-sm dark:text-themeGray-mediumLight flex flex-col md:flex-row gap-4 items-center">
+        <div className="text-center">
           Designed By <em>Rodrigo Nascimento</em>
         </div>
-        <span className="h-6 w-px border-l-2 border-dotted border-themeGray-medium dark:border-themeGray-mediumLight "></span>
-        <div className="">© All Rights Reserved</div>
+        <span className="hidden md:block h-6 w-px border-l-2 border-dotted border-themeGray-medium dark:border-themeGray-mediumLight "></span>
+        <div className="text-center">© All Rights Reserved</div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
