@@ -117,7 +117,7 @@ const Nav = () => {
             className="text-themeGray-darker dark:text-themeGray-light lg:hidden w-8 h-8 cursor-pointer"
           />
           <div
-            className={`lg:hidden ease-out absolute top-0 left-0 duration-400 z-30 dark:text-themeGray-medium text-themeGray-mediumLight transition shadow-lg [clip-path:polygon(0%_0%,100%_0%,100%_20%,30%_100%,0%_100%)] h-screen w-screen dark:bg-themeGray-light bg-themeGray-dark ${
+            className={`lg:hidden ease-out absolute top-0 left-0 duration-300 z-30 dark:text-themeGray-medium text-themeGray-mediumLight transition shadow-lg [clip-path:polygon(0%_0%,100%_0%,100%_20%,30%_100%,0%_100%)] h-screen w-screen dark:bg-themeGray-light bg-themeGray-dark ${
               mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
             }`}
           >
@@ -158,7 +158,7 @@ const Nav = () => {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className={`cursor-pointer ${
               mobileMenuOpen ? 'visible' : 'invisible'
-            } z-30 absolute top-6 transition duration-400 right-4 text-3xl text-themeGray-light dark:text-themeGray-medium`}
+            } z-30 absolute top-6 transition duration-300 right-4 text-3xl text-themeGray-light dark:text-themeGray-medium`}
           />
         </div>
       </div>
@@ -166,7 +166,7 @@ const Nav = () => {
         onClick={() => setMobileMenuOpen(false)}
         className={`${
           mobileMenuOpen ? 'visible' : 'invisible'
-        } absolute z-20 w-screen h-screen top-0 left-0 bg-themeGray-base transition duration-400 dark:bg-themeGray-light bg-opacity-30 dark:bg-opacity-25 `}
+        } absolute z-20 w-screen h-screen top-0 left-0 bg-themeGray-base transition duration-300 dark:bg-themeGray-light bg-opacity-30 dark:bg-opacity-25 `}
       ></div>
     </div>
   )

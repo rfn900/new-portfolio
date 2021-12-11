@@ -38,7 +38,6 @@ export const NavLinkWrapper = ({
           if (setMobileMenuOpen) setMobileMenuOpen(false)
           setActiveSection(toSection)
           setIsActive(false)
-          console.log('aqui')
         }}
         activeClass="active"
         to={toSection}
