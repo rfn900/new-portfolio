@@ -117,8 +117,8 @@ const Nav = () => {
             className="text-themeGray-darker dark:text-themeGray-light lg:hidden w-8 h-8 cursor-pointer"
           />
           <div
-            className={`lg:hidden ease-out absolute top-0 left-0 duration-300 z-30 dark:text-themeGray-medium text-themeGray-mediumLight transition shadow-lg [clip-path:polygon(0%_0%,100%_0%,100%_20%,30%_100%,0%_100%)] h-screen w-screen dark:bg-themeGray-light bg-themeGray-dark ${
-              mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+            className={`lg:hidden ease-out absolute top-0 right-full duration-300 z-30 dark:text-themeGray-medium text-themeGray-mediumLight transition shadow-lg [clip-path:polygon(0%_0%,100%_0%,100%_20%,30%_100%,0%_100%)] h-screen w-screen dark:bg-themeGray-light bg-themeGray-dark ${
+              mobileMenuOpen ? 'translate-x-full' : 'translate-x-0'
             }`}
           >
             <div className="dark:bg-themeGray-light bg-themeGray-dark w-screen h-screen float-right [clip-path:polygon(100%_15%,100%_100%,25%_100%)] [shape-outside:polygon(100%_15%,100%_100%,25%_100%)] "></div>
