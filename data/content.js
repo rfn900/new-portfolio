@@ -70,7 +70,7 @@ export const projects = [
       'This is a fullstack CRUD application inspired in the Google Keep web app. In it you can write note cards using markdown language and even create fully functional todo lists which are all displayed in a masonry layout.',
       'The app supports Google OAuth2 authentication and it is deployed with Heroku (Backend) and Vercel (Frontend)',
     ],
-    liveLink: 'https://todos-rfn900.vercel.app/',
+    liveLink: 'https://todos.rods.dev',
     repoLink: 'https://github.com/rfn900/todos',
   },
 ]
