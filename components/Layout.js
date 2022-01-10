@@ -24,13 +24,16 @@ const Layout = ({ children }) => {
         <meta
           name="description"
           property="og:description"
-          content="Personal web developer portfolio from Rodrigo Nascimento"
+          content="This is the web developer portfolio from Rodrigo Nascimento. 
+          Check my latest projects, grab a copy of my updated CV or feel free to
+          write me a message."
         />
         <meta
           name="image"
           property="og:image"
           content="https://rod-app-bucket.s3.eu-north-1.amazonaws.com/feat_image.png"
         />
+        <meta name="author" content="Rodrigo Nascimento">
         <link rel="icon" href="/rod-favicon.png" />
         <link
           rel="stylesheet"
