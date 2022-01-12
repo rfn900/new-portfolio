@@ -70,9 +70,9 @@ const Nav = () => {
             scrollToTop()
             setActiveSection('home')
           }}
-          className="flex cursor-pointer items-center gapG2 lg:gap-4 text-2xl font-mono text-themeGray-dark dark:text-themeGray-light"
+          className="flex items-center font-mono text-2xl cursor-pointer gapG2 lg:gap-4 text-themeGray-dark dark:text-themeGray-light"
         >
-          <div className="h-8 relative flex pr-6 pl-1 items-center rounded text-themeGray-dark dark:text-themeGray-light bg-themeGray-light dark:bg-themeGray-base">
+          <div className="relative flex items-center h-8 pl-1 pr-6 rounded text-themeGray-dark dark:text-themeGray-light bg-themeGray-light dark:bg-themeGray-base">
             <FaAngleRight />
             <span className="font-mono">rods.dev</span>
             <div
@@ -82,7 +82,7 @@ const Nav = () => {
             ></div>
           </div>
         </div>
-        <div className="capitalize hidden lg:flex gap-12 text-base font-mono text-themeGray-dark dark:text-themeGray-light">
+        <div className="hidden font-mono text-base capitalize lg:flex gap-12 text-themeGray-dark dark:text-themeGray-light">
           <NavLinkWrapper toSection="about">About</NavLinkWrapper>
           <NavLinkWrapper toSection="skills">Skills</NavLinkWrapper>
           <NavLinkWrapper toSection="projects">Projects</NavLinkWrapper>
@@ -91,7 +91,7 @@ const Nav = () => {
           <NavLinkWrapper toSection="contactme">Blog</NavLinkWrapper>
           */}
         </div>
-        <div className="flex gap-4 lg:gap-8 items-center">
+        <div className="flex items-center gap-4 lg:gap-8">
           <AppButton
             text="Contact Me"
             Icon={HiMail}
@@ -100,21 +100,21 @@ const Nav = () => {
           />
           <div
             onClick={() => setDarkMode(!darkMode)}
-            className="relative group flex bg-gradient-to-br from-themeGray-base shadow to-themeGray-medium dark:from-yellow-400 dark:to-themeGray-light transition cursor-pointer rounded-lg lg:rounded-xl w-8 h-8 lg:w-12 lg:h-12 items-center justify-center"
+            className="relative flex items-center justify-center w-8 h-8 rounded-lg shadow cursor-pointer group bg-gradient-to-br from-themeGray-base to-themeGray-medium dark:from-yellow-400 dark:to-themeGray-light transition lg:rounded-xl lg:w-12 lg:h-12"
           >
             {darkMode ? (
-              <MdLightMode className="h-5 w-5 lg:h-6 lg:w-6 transition text-themeGray-dark" />
+              <MdLightMode className="w-5 h-5 lg:h-6 lg:w-6 transition text-themeGray-dark" />
             ) : (
-              <FaMoon className="h-5 w-5 lg:h-6 lg:w-6 transition text-purple-400 " />
+              <FaMoon className="w-5 h-5 text-purple-400 lg:h-6 lg:w-6 transition " />
             )}
             <BsTriangleFill className="absolute top-9 lg:top-[3.2rem] group-hover:block transition hidden dark:text-themeGray-light text-themeGray-darker" />
-            <div className="absolute w-32 text-center top-12 lg:top-16 py-2 transition group-hover:block hidden dark:bg-themeGray-light bg-themeGray-darker dark:text-themeGray-darker text-themeGray-light">
+            <div className="absolute hidden w-32 py-2 text-center top-12 lg:top-16 transition group-hover:block dark:bg-themeGray-light bg-themeGray-darker dark:text-themeGray-darker text-themeGray-light">
               {darkMode ? <span>Light Mode</span> : <span>Dark Mode</span>}
             </div>
           </div>
           <HiMenu
             onClick={handleMenuClick}
-            className="text-themeGray-darker dark:text-themeGray-light lg:hidden w-8 h-8 cursor-pointer"
+            className="w-8 h-8 cursor-pointer text-themeGray-darker dark:text-themeGray-light lg:hidden"
           />
           <div
             className={`lg:hidden ease-out absolute top-0 right-full duration-300 z-30 dark:text-themeGray-medium text-themeGray-mediumLight transition shadow-lg [clip-path:polygon(0%_0%,100%_0%,100%_20%,30%_100%,0%_100%)] h-screen w-screen dark:bg-themeGray-light bg-themeGray-dark ${
@@ -141,6 +141,7 @@ const Nav = () => {
                 mobileNavItems.map((item, index) => {
                   return (
                     <div
+                      key={index}
                       className={`font-mono ${index > 0 ? 'mt-8 md:mt-2' : ''}`}
                     >
                       <NavLinkWrapper
