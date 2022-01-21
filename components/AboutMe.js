@@ -116,7 +116,7 @@ const AboutMe = ({ id }) => {
               Nackademin in Stockholm, Sweden.
             </p>
             <a
-              href="https://drive.google.com/file/d/12dUKDhN_CpAk-hREmyTl82NGNylDsErY/view?usp=sharing"
+              href="https://drive.google.com/file/d/14AQGvuS1Va4isF3U6N4yU2q8c-kE_s2R/view?usp=sharing"
               target="_blank"
             >
               <AppButton
