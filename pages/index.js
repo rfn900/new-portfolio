@@ -47,7 +47,7 @@ export default function Home() {
         className="hidden fixed md:flex flex-col gap-4 items-center  bottom-10 right-6"
       >
         <a
-          href="https://drive.google.com/file/d/14AQGvuS1Va4isF3U6N4yU2q8c-kE_s2R/view"
+          href="https://drive.google.com/file/d/14AQGvuS1Va4isF3U6N4yU2q8c-kE_s2R/view?usp=sharing"
           target="_blank"
         >
           <VscFilePdf className="text-themeGray-base transition hover:opacity-75 dark:hover:opacity-100 dark:hover:text-yellow-200 dark:text-themeGray-light w-7 h-7" />

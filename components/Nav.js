@@ -157,7 +157,7 @@ const Nav = () => {
               <div className="inline-block mt-8 md:mt-4 mr-3 md:mr-1">
                 <div className="flex items-center gap-10">
                   <a
-                    href="https://drive.google.com/file/d/14AQGvuS1Va4isF3U6N4yU2q8c-kE_s2R/view"
+                    href="https://drive.google.com/file/d/14AQGvuS1Va4isF3U6N4yU2q8c-kE_s2R/view?usp=sharing"
                     target="_blank"
                   >
                     <VscFilePdf className="transition hover:opacity-75 dark:hover:opacity-100 dark:hover:text-yellow-200  w-7 h-7" />
