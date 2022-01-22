@@ -1,22 +1,22 @@
-import { motion } from "framer-motion";
-import { scroller } from "react-scroll";
-import Hero from "../components/Hero";
-import AboutMe from "../components/AboutMe";
-import Skills from "../components/Skills";
-import ContactMe from "../components/ContactMe";
-import { HiOutlineChevronDoubleDown } from "react-icons/hi";
-import { BsGithub } from "react-icons/bs";
-import { BsLinkedin } from "react-icons/bs";
-import { VscFilePdf } from "react-icons/vsc";
-import Projects from "../components/Projects";
+import { motion } from 'framer-motion'
+import { scroller } from 'react-scroll'
+import Hero from '../components/Hero'
+import AboutMe from '../components/AboutMe'
+import Skills from '../components/Skills'
+import ContactMe from '../components/ContactMe'
+import { HiOutlineChevronDoubleDown } from 'react-icons/hi'
+import { BsGithub } from 'react-icons/bs'
+import { BsLinkedin } from 'react-icons/bs'
+import { VscFilePdf } from 'react-icons/vsc'
+import Projects from '../components/Projects'
 
 export default function Home() {
   function scrollTo() {
-    scroller.scrollTo("about", {
+    scroller.scrollTo('about', {
       duration: 800,
       delay: 0,
-      smooth: "easeInOutQuart",
-    });
+      smooth: 'easeInOutQuart',
+    })
   }
 
   return (
@@ -29,7 +29,7 @@ export default function Home() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8, duration: 0.8 }}
         onClick={() => {
-          scrollTo();
+          scrollTo()
         }}
         className="absolute hidden cursor-pointer lg:flex-center opacity-50 border-themeGray-medium dark:border-themeGray-light -translate-y-32 xl:-translate-y-20 rounded-full left-1/2 w-12 h-12 border-2 transform -translate-x-1/2 "
       >
@@ -47,7 +47,7 @@ export default function Home() {
         className="hidden fixed md:flex flex-col gap-4 items-center  bottom-10 right-6"
       >
         <a
-          href="https://drive.google.com/file/d/1pRK-J-4Uzs-yZOw_koE7l9OncyK8cHer/view"
+          href="https://drive.google.com/file/d/14AQGvuS1Va4isF3U6N4yU2q8c-kE_s2R/view"
           target="_blank"
         >
           <VscFilePdf className="text-themeGray-base transition hover:opacity-75 dark:hover:opacity-100 dark:hover:text-yellow-200 dark:text-themeGray-light w-7 h-7" />
@@ -61,5 +61,5 @@ export default function Home() {
         <div className="w-px h-32 rounded-xl bg-themeGray-medium dark:bg-themeGray-light"></div>
       </motion.div>
     </motion.div>
-  );
+  )
 }
