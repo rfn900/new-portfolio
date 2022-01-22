@@ -154,7 +154,7 @@ const Nav = () => {
                     </div>
                   )
                 })}
-              <div className="inline-block mt-8 md:mt-4 mr-1">
+              <div className="inline-block mt-8 md:mt-4 mr-3 md:mr-1">
                 <div className="flex items-center gap-10">
                   <a
                     href="https://drive.google.com/file/d/14AQGvuS1Va4isF3U6N4yU2q8c-kE_s2R/view"
