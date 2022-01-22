@@ -2,7 +2,8 @@ import Image from 'next/image'
 import { useEffect, useContext, useState } from 'react'
 import { HiMail } from 'react-icons/hi'
 import { MdLightMode } from 'react-icons/md'
-import { BsTriangleFill } from 'react-icons/bs'
+import { VscFilePdf } from 'react-icons/vsc'
+import { BsTriangleFill, BsGithub, BsLinkedin } from 'react-icons/bs'
 import { HiMenu } from 'react-icons/hi'
 import { FaAngleRight } from 'react-icons/fa'
 import { FaMoon } from 'react-icons/fa'
@@ -153,6 +154,25 @@ const Nav = () => {
                     </div>
                   )
                 })}
+              <div className="inline-block mt-8 md:mt-4 mr-1">
+                <div className="flex items-center gap-10">
+                  <a
+                    href="https://drive.google.com/file/d/14AQGvuS1Va4isF3U6N4yU2q8c-kE_s2R/view"
+                    target="_blank"
+                  >
+                    <VscFilePdf className="transition hover:opacity-75 dark:hover:opacity-100 dark:hover:text-yellow-200  w-7 h-7" />
+                  </a>
+                  <a href="https://github.com/rfn900" target="_blank">
+                    <BsGithub className="transition hover:opacity-75 dark:hover:opacity-100 dark:hover:text-yellow-200 w-6 h-6" />
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/rodrigofnascimento"
+                    target="_blank"
+                  >
+                    <BsLinkedin className="hover:opacity-75 dark:hover:opacity-100 dark:hover:text-yellow-200  w-6 h-6" />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
           <AiOutlineClose
