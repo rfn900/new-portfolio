@@ -24,6 +24,10 @@ const ContactMe = ({ id }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setSubmitStatus({
+      validPayload: false,
+      validateMessage: 'Sending...',
+    })
     const validateMessage = formValidateMessage(formFields)
     clearTimeout(errorMsgTimeOut)
     if (validateMessage === 'validated') {
@@ -118,7 +122,14 @@ const ContactMe = ({ id }) => {
           </div>
         </div>
         <div className="font-body ml-auto w-40">
-          <AppButton text="Send" Icon={RiSendPlaneFill} />
+          <AppButton
+            text={
+              submitStatus && submitStatus.validateMessage === 'Sending'
+                ? submitStatus.validateMessage
+                : 'Send'
+            }
+            Icon={RiSendPlaneFill}
+          />
         </div>
       </motion.form>
       <AnimatePresence>
