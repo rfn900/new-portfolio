@@ -127,7 +127,7 @@ const ContactMe = ({ id }) => {
           <AppButton
             text={btnStatus}
             Icon={btnStatus === 'Sending...' ? LoadingSpin : RiSendPlaneFill}
-            customClasses="transtion"
+            customClasses="transition"
           />
         </div>
       </motion.form>
