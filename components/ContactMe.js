@@ -8,6 +8,7 @@ import AppButton from './AppButton'
 import { MotionSectionTitle } from './MotionSectionTitle'
 import { formValidateMessage } from '../utils/formValidates'
 import SubmitMessage from '../components/SubmitMessage'
+import LoadingSpin from '../components/LoadingSpin'
 import { easing } from '../animation/settings'
 
 const ContactMe = ({ id }) => {
@@ -15,30 +16,31 @@ const ContactMe = ({ id }) => {
   const formRef = useRef()
   const [formFields, setFormFields] = useState({})
   const [submitStatus, setSubmitStatus] = useState(null)
+  const [btnStatus, setBtnStatus] = useState('Send')
   let errorMsgTimeOut = null
   useEffect(() => {
     errorMsgTimeOut = setTimeout(() => {
       setSubmitStatus(null)
+      setBtnStatus('Send')
     }, 2600)
   }, [submitStatus])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitStatus({
-      validPayload: false,
-      validateMessage: 'Sending...',
-    })
     const validateMessage = formValidateMessage(formFields)
     clearTimeout(errorMsgTimeOut)
     if (validateMessage === 'validated') {
+      setBtnStatus('Sending...')
       try {
         const res = await axios.post('/api/hello', formFields)
         formRef.current.reset()
+        setBtnStatus('Sent')
         setSubmitStatus({
           validPayload: true,
           validateMessage: res.data.message,
         })
       } catch (e) {
+        setBtnStatus('Failed')
         setSubmitStatus({
           validPayload: false,
           validateMessage: e.response.data.message,
@@ -123,12 +125,9 @@ const ContactMe = ({ id }) => {
         </div>
         <div className="font-body ml-auto w-40">
           <AppButton
-            text={
-              submitStatus && submitStatus.validateMessage === 'Sending'
-                ? submitStatus.validateMessage
-                : 'Send'
-            }
-            Icon={RiSendPlaneFill}
+            text={btnStatus}
+            Icon={btnStatus === 'Sending...' ? LoadingSpin : RiSendPlaneFill}
+            customClasses="transtion"
           />
         </div>
       </motion.form>
