@@ -77,11 +77,11 @@ export const projects = [
 
 // Content for Skills component
 export const skills = [
-  ["Javascript/ES6+", "Typescript", "HTML5"],
-  ["CSS3", "SASS", "Tailwindcss"],
+  ["Javascript/ES6+", "Typescript", "PHP", "Python"],
+  ["HTML5", "CSS3", "SASS", "Tailwindcss"],
   ["React", "Nextjs", "React Native"],
   ["REST", "GraphQL", "MongoDB", "MySQL"],
-  ["Nodejs", "PHP", "Python (Flask and Django)"],
+  ["Nodejs", "Flask", "Django"],
   ["Git", "Docker", "Amazon AWS"],
 ];
 
