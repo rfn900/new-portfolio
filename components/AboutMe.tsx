@@ -1,29 +1,29 @@
-import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import { HiOutlineCode } from 'react-icons/hi'
-import { HiOutlineViewGrid } from 'react-icons/hi'
-import { MdSyncProblem } from 'react-icons/md'
-import { MdPictureAsPdf } from 'react-icons/md'
-import AppButton from './AppButton'
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { HiOutlineCode } from "react-icons/hi";
+import { HiOutlineViewGrid } from "react-icons/hi";
+import { MdSyncProblem } from "react-icons/md";
+import { MdPictureAsPdf } from "react-icons/md";
+import AppButton from "./AppButton";
 import {
   initialLeft,
   initialRight,
   final,
-} from '../animation/animationsOnScroll'
-import { easing } from '../animation/settings'
-import { useActivateSection } from '../customHooks/useActivateSection'
-import { MotionSectionTitle } from './MotionSectionTitle'
+} from "../animation/animationsOnScroll";
+import { easing } from "../animation/settings";
+import { useActivateSection } from "../customHooks/useActivateSection";
+import { MotionSectionTitle } from "./MotionSectionTitle";
 
 const AboutMe = ({ id }) => {
   const { ref: bl1ref, inView: inView1 } = useInView({
     threshold: 0.3,
-  })
+  });
 
   const { ref: bl2ref, inView: inView2 } = useInView({
     threshold: 0.3,
-  })
+  });
 
-  const { ref, inView } = useActivateSection(id)
+  const { ref } = useActivateSection(id);
 
   return (
     <motion.div
@@ -34,7 +34,7 @@ const AboutMe = ({ id }) => {
       animate="animate"
       className="py-[96px] flex-center justify-start 2xl:justify-center xs:mt-0 flex-col section"
     >
-      <MotionSectionTitle inView={inView}>whoami</MotionSectionTitle>
+      <MotionSectionTitle>whoami</MotionSectionTitle>
       <div className="flex flex-col gap-4 lg:gap-0 w-full lg:flex-row  items-center lg:items-start mt-16 2xl:mt-24 h-[900px] lg:h-[500px]">
         <div className="flex flex-col w-full items-center lg:items-end xl:pr-8 h-full lg:mr-12 lg:w-1/2 ">
           <motion.div
@@ -129,7 +129,7 @@ const AboutMe = ({ id }) => {
         </motion.div>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
-export default AboutMe
+export default AboutMe;

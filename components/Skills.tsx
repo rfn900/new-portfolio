@@ -8,7 +8,7 @@ import { MotionSectionTitle } from "./MotionSectionTitle";
 import { skills } from "../data/content";
 
 const Skills = ({ id }) => {
-  const { ref, inView } = useActivateSection(id);
+  const { ref } = useActivateSection(id);
   const { ref: ref2, inView: inView2 } = useInView({
     threshold: 0.3,
   });
@@ -21,7 +21,7 @@ const Skills = ({ id }) => {
       ref={ref}
       className="py-[96px] flex-center justify-start 2xl:justify-center flex-col section"
     >
-      <MotionSectionTitle inView={inView}>ls my-skills/</MotionSectionTitle>
+      <MotionSectionTitle>ls my-skills/</MotionSectionTitle>
       <motion.div
         ref={ref2}
         initial={initialDown}

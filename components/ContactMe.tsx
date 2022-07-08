@@ -1,63 +1,63 @@
-import { useState, useRef, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import axios from 'axios'
-import { FaAngleRight } from 'react-icons/fa'
-import { RiSendPlaneFill } from 'react-icons/ri'
-import { useActivateSection } from '../customHooks/useActivateSection'
-import AppButton from './AppButton'
-import { MotionSectionTitle } from './MotionSectionTitle'
-import { formValidateMessage } from '../utils/formValidates'
-import SubmitMessage from '../components/SubmitMessage'
-import LoadingSpin from '../components/LoadingSpin'
-import { easing } from '../animation/settings'
+import { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import axios from "axios";
+import { FaAngleRight } from "react-icons/fa";
+import { RiSendPlaneFill } from "react-icons/ri";
+import { useActivateSection } from "../customHooks/useActivateSection";
+import AppButton from "./AppButton";
+import { MotionSectionTitle } from "./MotionSectionTitle";
+import { formValidateMessage } from "../utils/formValidates";
+import SubmitMessage from "../components/SubmitMessage";
+import LoadingSpin from "../components/LoadingSpin";
+import { easing } from "../animation/settings";
 
 const ContactMe = ({ id }) => {
-  const { ref, inView } = useActivateSection(id)
-  const formRef = useRef()
-  const [formFields, setFormFields] = useState({})
-  const [submitStatus, setSubmitStatus] = useState(null)
-  const [btnStatus, setBtnStatus] = useState('Send')
-  let errorMsgTimeOut = null
+  const { ref, inView } = useActivateSection(id);
+  const formRef = useRef<HTMLFormElement>();
+  const [formFields, setFormFields] = useState({});
+  const [submitStatus, setSubmitStatus] = useState(null);
+  const [btnStatus, setBtnStatus] = useState("Send");
+  let errorMsgTimeOut = null;
   useEffect(() => {
     errorMsgTimeOut = setTimeout(() => {
-      setSubmitStatus(null)
-      setBtnStatus('Send')
-    }, 2600)
-  }, [submitStatus])
+      setSubmitStatus(null);
+      setBtnStatus("Send");
+    }, 2600);
+  }, [submitStatus]);
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    const validateMessage = formValidateMessage(formFields)
-    clearTimeout(errorMsgTimeOut)
-    if (validateMessage === 'validated') {
-      setBtnStatus('Sending...')
+    e.preventDefault();
+    const validateMessage = formValidateMessage(formFields);
+    clearTimeout(errorMsgTimeOut);
+    if (validateMessage === "validated") {
+      setBtnStatus("Sending...");
       try {
-        const res = await axios.post('/api/hello', formFields)
-        formRef.current.reset()
-        setBtnStatus('Sent')
+        const res = await axios.post("/api/hello", formFields);
+        formRef?.current?.reset();
+        setBtnStatus("Sent");
         setSubmitStatus({
           validPayload: true,
           validateMessage: res.data.message,
-        })
+        });
       } catch (e) {
-        setBtnStatus('Failed')
+        setBtnStatus("Failed");
         setSubmitStatus({
           validPayload: false,
           validateMessage: e.response.data.message,
-        })
+        });
       }
     } else
       setSubmitStatus({
         validPayload: false,
         validateMessage,
-      })
-  }
+      });
+  };
 
   const handleChange = (value, type) => {
-    const payload = { ...formFields }
-    payload[type] = value
-    setFormFields(payload)
-  }
+    const payload = { ...formFields };
+    payload[type] = value;
+    setFormFields(payload);
+  };
 
   return (
     <div
@@ -65,9 +65,7 @@ const ContactMe = ({ id }) => {
       id={id}
       className="relative mt-36 xs:mt-12 flex-center flex-col section"
     >
-      <MotionSectionTitle inView={inView}>
-        mail -s "hey" rods
-      </MotionSectionTitle>
+      <MotionSectionTitle>mail -s "hey" rods</MotionSectionTitle>
       <motion.form
         initial={{ opacity: 0 }}
         animate={inView && { opacity: 1 }}
@@ -126,7 +124,7 @@ const ContactMe = ({ id }) => {
         <div className="font-body ml-auto w-40">
           <AppButton
             text={btnStatus}
-            Icon={btnStatus === 'Sending...' ? LoadingSpin : RiSendPlaneFill}
+            Icon={btnStatus === "Sending..." ? LoadingSpin : RiSendPlaneFill}
             customClasses="transition"
           />
         </div>
@@ -139,7 +137,7 @@ const ContactMe = ({ id }) => {
         )}
       </AnimatePresence>
     </div>
-  )
-}
+  );
+};
 
-export default ContactMe
+export default ContactMe;
