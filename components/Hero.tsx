@@ -1,15 +1,15 @@
-import { motion } from 'framer-motion'
-import Image from 'next/image'
-import { SiPython } from 'react-icons/si'
-import { FaNodeJs } from 'react-icons/fa'
-import { FaReact } from 'react-icons/fa'
-import { SiNextdotjs } from 'react-icons/si'
-import { MdOutlineScreenShare } from 'react-icons/md'
-import { useActivateSection } from '../customHooks/useActivateSection'
-import { scroller } from 'react-scroll'
-import AppButton from '../components/AppButton'
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { SiPython } from "react-icons/si";
+import { FaNodeJs } from "react-icons/fa";
+import { FaReact } from "react-icons/fa";
+import { SiNextdotjs } from "react-icons/si";
+import { MdOutlineScreenShare } from "react-icons/md";
+import { useActivateSection } from "../customHooks/useActivateSection";
+import { scroller } from "react-scroll";
+import AppButton from "../components/AppButton";
 
-const easing = [0.6, -0.05, 0.01, 0.99]
+const easing = [0.6, -0.05, 0.01, 0.99];
 const fadeInUp = {
   initial: {
     y: 60,
@@ -23,7 +23,7 @@ const fadeInUp = {
       ease: easing,
     },
   },
-}
+};
 
 const stagger = {
   animate: {
@@ -31,17 +31,17 @@ const stagger = {
       staggerChildren: 0.1,
     },
   },
-}
+};
 const scrollToProjects = () => {
-  scroller.scrollTo('projects', {
+  scroller.scrollTo("projects", {
     duration: 800,
     delay: 0,
-    smooth: 'easeInOutQuart',
-  })
-}
+    smooth: "easeInOutQuart",
+  });
+};
 const Hero = () => {
-  const { ref } = useActivateSection('hero')
-  const darkModeIllustration = '/me-illustration.png'
+  const { ref } = useActivateSection("hero");
+  const darkModeIllustration = "/me-illustration.png";
 
   return (
     <motion.div
@@ -96,7 +96,7 @@ const Hero = () => {
               className={` text-[#98c379] w-[36px] h-[36px] lg:w-[72px] lg:h-[72px]`}
             />
           </div>
-          <div className="absolute z-10 rod-float-delay-2 shadow-lg top-[170px] md:top-[240px] lg:top-[360px] right-[52px] lg:right-[100px] h-[80px] w-[80px] lg:h-[120px] z-10 flex-center lg:w-[120px] bg-[#fafafa] dark:bg-themeGray-darker rounded-full">
+          <div className="absolute rod-float-delay-2 shadow-lg top-[170px] md:top-[240px] lg:top-[360px] right-[52px] lg:right-[100px] h-[80px] w-[80px] lg:h-[120px] z-10 flex-center lg:w-[120px] bg-[#fafafa] dark:bg-themeGray-darker rounded-full">
             <SiNextdotjs
               className={`w-10 h-10 text-[#e5c07b] lg:w-14 lg:h-14`}
             />
@@ -116,7 +116,7 @@ const Hero = () => {
         </div>
       </motion.div>
     </motion.div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

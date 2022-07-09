@@ -1,4 +1,6 @@
-export const formValidateMessage = (fields) => {
+import { FormFieldsType } from "../types";
+
+export const formValidateMessage = (fields: FormFieldsType) => {
   if (typeof fields.name == "undefined" || fields.name === "")
     return "Name field can't be empty";
 

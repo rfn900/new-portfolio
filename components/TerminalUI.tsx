@@ -1,27 +1,27 @@
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { FaAngleRight } from 'react-icons/fa'
-import { FaHandPointRight } from 'react-icons/fa'
-//import { gruvBoxColors } from "../data/content";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { FaAngleRight } from "react-icons/fa";
+import { FaHandPointRight } from "react-icons/fa";
+import { SkillsType } from "../types";
 
 export const oneDarkColors = [
-  'bg-[#61afef]',
-  'bg-[#c678dd]',
-  'bg-[#98c379]',
-  'bg-[#e5c07b]',
-]
+  "bg-[#61afef]",
+  "bg-[#c678dd]",
+  "bg-[#98c379]",
+  "bg-[#e5c07b]",
+];
 export const gruvBoxColors = [
-  'bg-[#fe8019]',
-  'bg-[#b8bb26]',
-  'bg-[#fb4934]',
-  'bg-[#fabd2f]',
-]
-let count = 0 //This will help me alternate bullet colors
+  "bg-[#fe8019]",
+  "bg-[#b8bb26]",
+  "bg-[#fb4934]",
+  "bg-[#fabd2f]",
+];
+let count = 0; //This will help me alternate bullet colors
 
-const colorsRange = gruvBoxColors.length
+const colorsRange = gruvBoxColors.length;
 
-const TerminalUI = ({ skills }) => {
-  const [colorTheme, setColorTheme] = useState('onedark')
+const TerminalUI = ({ skills }: { skills: SkillsType[] }) => {
+  const [colorTheme, setColorTheme] = useState("onedark");
 
   return (
     <div className="relative mt-16 pb-12 2xl:mt-24 max-w-[900px] lg:w-[720px] min-h-[500px] rounded-t-2xl rounded-b-lg shadow-xl bg-themeGray-light dark:bg-themeGray-dark overflow-hidden">
@@ -33,7 +33,7 @@ const TerminalUI = ({ skills }) => {
           my-skills
         </span>
       </div>
-      <div className="w-full px-2 py-8 flex flex-col gap-8 lg:gap-4 lg:gap-0">
+      <div className="w-full px-2 py-8 flex flex-col gap-8 lg:gap-0">
         {skills.map((set, index) => {
           return (
             <div
@@ -42,25 +42,25 @@ const TerminalUI = ({ skills }) => {
             >
               <FaAngleRight className="text-themeGray-dark dark:text-themeGray-light h-4 w-4 mb-px" />
               {set.map((skill, ix) => {
-                count++
+                count++;
                 return (
                   <motion.span
                     key={ix}
                     whileHover={{ scale: 1.2 }}
                     className={`${
-                      colorTheme === 'gruvbox' &&
+                      colorTheme === "gruvbox" &&
                       gruvBoxColors[count % colorsRange]
                     } ${
-                      colorTheme === 'onedark' &&
+                      colorTheme === "onedark" &&
                       oneDarkColors[count % colorsRange]
                     } px-2 rounded-full cursor-default transition bg-opacity-75 dark:bg-opacity-100`}
                   >
                     {skill}
                   </motion.span>
-                )
+                );
               })}
             </div>
-          )
+          );
         })}
       </div>
 
@@ -68,29 +68,29 @@ const TerminalUI = ({ skills }) => {
         <span className="text-xs">Color Themes:</span>
         <div className="flex items-center gap-2 ml-2">
           <FaHandPointRight
-            className={`${colorTheme !== 'gruvbox' && 'opacity-0'} transition`}
+            className={`${colorTheme !== "gruvbox" && "opacity-0"} transition`}
           />
           <span
             className="cursor-pointer font-bold"
-            onClick={() => setColorTheme('gruvbox')}
+            onClick={() => setColorTheme("gruvbox")}
           >
             Gruvbox
           </span>
         </div>
         <div className="flex items-center gap-2 ml-2">
           <FaHandPointRight
-            className={`${colorTheme !== 'onedark' && 'opacity-0'} transition`}
+            className={`${colorTheme !== "onedark" && "opacity-0"} transition`}
           />
           <span
             className="cursor-pointer font-bold"
-            onClick={() => setColorTheme('onedark')}
+            onClick={() => setColorTheme("onedark")}
           >
             Onedark
           </span>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default TerminalUI
+export default TerminalUI;

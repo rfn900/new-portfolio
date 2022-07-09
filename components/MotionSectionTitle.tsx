@@ -3,12 +3,13 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { easing } from "../animation/settings";
 import { useDarkMode } from "../context/darkMode";
+import { ReactChild } from "react";
 
-export const MotionSectionTitle = ({ children }) => {
+export const MotionSectionTitle = ({ children }: { children: ReactChild }) => {
   const { ref, inView } = useInView({
     threshold: 0.5,
   });
-  const { darkMode } = useDarkMode();
+  const { darkMode }: { darkMode: boolean } = useDarkMode();
 
   return (
     <motion.div

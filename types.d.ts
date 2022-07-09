@@ -8,3 +8,16 @@ export interface ProjectsFields {
   liveLink: string;
   repoLink: string;
 }
+
+export interface FormValidationPayload {
+  validPayload: boolean;
+  validateMessage: string;
+}
+
+export type SkillsType = string[];
+
+export interface FormFieldsType {
+  name?: string;
+  email?: string;
+  message?: string;
+}

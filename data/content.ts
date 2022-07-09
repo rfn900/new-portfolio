@@ -1,4 +1,4 @@
-import { ProjectsFields } from "../types";
+import { ProjectsFields, SkillsType } from "../types";
 
 // Content for Projects component
 export const projects: ProjectsFields[] = [
@@ -78,7 +78,7 @@ export const projects: ProjectsFields[] = [
 ];
 
 // Content for Skills component
-export const skills = [
+export const skills: SkillsType[] = [
   ["Javascript/ES6+", "HTML5", "CSS3", "SASS", "Tailwindcss"],
   ["React", "Nextjs", "React Native"],
   ["REST", "GraphQL", "MongoDB", "MySQL"],
@@ -88,14 +88,14 @@ export const skills = [
 ];
 
 // Content for theming and micro interactions
-export const oneDarkColors = [
+export const oneDarkColors: string[] = [
   "bg-[#61afef]",
   "bg-[#c678dd]",
   "bg-[#98c379]",
   "bg-[#e5c07b]",
 ];
 
-export const gruvBoxColors = [
+export const gruvBoxColors: string[] = [
   "bg-[#fe8019]",
   "bg-[#b8bb26]",
   "bg-[#fb4934]",

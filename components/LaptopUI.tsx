@@ -1,11 +1,19 @@
-import Image from 'next/image'
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { BsFillPlayFill } from 'react-icons/bs'
-import { BsStopCircle } from 'react-icons/bs'
+import Image from "next/image";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { BsFillPlayFill } from "react-icons/bs";
+import { BsStopCircle } from "react-icons/bs";
 
-export const LaptopUI = ({ gif, screen, alt }) => {
-  const [gifPlay, setGifPlay] = useState(false)
+export const LaptopUI = ({
+  gif,
+  screen,
+  alt,
+}: {
+  gif: string;
+  screen: string;
+  alt: string;
+}) => {
+  const [gifPlay, setGifPlay] = useState(false);
   return (
     <motion.div className="relative w-[300px] h-[210px] md:w-[484px] md:h-[320px] pb-2 px-2 pt-5 rounded-2xl bg-themeGray-darker">
       <div className="absolute top-[6px] left-1/2 transform -translate-x-1/2 w-2 h-2 rounded-full bg-themeGray-medium"></div>
@@ -45,5 +53,5 @@ export const LaptopUI = ({ gif, screen, alt }) => {
         <div className="absolute h-1/2 w-20 rounded-b-lg bg-themeGray-mediumLight left-1/2 transform -translate-x-1/2"></div>
       </div>
     </motion.div>
-  )
-}
+  );
+};

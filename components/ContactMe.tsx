@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
 import { FaAngleRight } from "react-icons/fa";
@@ -10,12 +10,14 @@ import { formValidateMessage } from "../utils/formValidates";
 import SubmitMessage from "../components/SubmitMessage";
 import LoadingSpin from "../components/LoadingSpin";
 import { easing } from "../animation/settings";
+import { FormFieldsType, FormValidationPayload } from "../types";
 
 const ContactMe = ({ id }) => {
   const { ref, inView } = useActivateSection(id);
   const formRef = useRef<HTMLFormElement>();
-  const [formFields, setFormFields] = useState({});
-  const [submitStatus, setSubmitStatus] = useState(null);
+  const [formFields, setFormFields] = useState<FormFieldsType>({});
+  const [submitStatus, setSubmitStatus] =
+    useState<FormValidationPayload | null>(null);
   const [btnStatus, setBtnStatus] = useState("Send");
   let errorMsgTimeOut = null;
   useEffect(() => {
@@ -25,7 +27,7 @@ const ContactMe = ({ id }) => {
     }, 2600);
   }, [submitStatus]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const validateMessage = formValidateMessage(formFields);
     clearTimeout(errorMsgTimeOut);
@@ -53,7 +55,7 @@ const ContactMe = ({ id }) => {
       });
   };
 
-  const handleChange = (value, type) => {
+  const handleChange = (value: string, type: string) => {
     const payload = { ...formFields };
     payload[type] = value;
     setFormFields(payload);

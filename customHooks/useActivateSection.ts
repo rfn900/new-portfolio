@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { useActiveSection } from "../context/activeSection";
 
-export const useActivateSection = (id) => {
+export const useActivateSection = (id: string) => {
   const { setActiveSection } = useActiveSection();
   const { ref, inView } = useInView({
     threshold: 0.2,

@@ -1,15 +1,15 @@
-import Head from 'next/head'
-import Footer from '../components/Footer'
-import Nav from '../components/Nav'
-import { DarkModeContext } from '../context/darkMode'
-import { useContext } from 'react'
+import Head from "next/head";
+import Footer from "../components/Footer";
+import Nav from "../components/Nav";
+import { DarkModeContext } from "../context/darkMode";
+import { ReactChild, useContext } from "react";
 
-const Layout = ({ children }) => {
-  const { darkMode } = useContext(DarkModeContext)
+const Layout = ({ children }: { children: ReactChild }) => {
+  const { darkMode }: { darkMode: boolean } = useContext(DarkModeContext);
   return (
     <div
       className={`overflow-hidden min-h-screen ${
-        darkMode ? 'dark' : ''
+        darkMode ? "dark" : ""
       } flex flex-col font-sans `}
     >
       <Head>
@@ -44,7 +44,7 @@ const Layout = ({ children }) => {
       {children}
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

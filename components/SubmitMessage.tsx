@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { HiXCircle, HiCheckCircle } from "react-icons/hi";
-const SubmitMessage = ({ status }) => {
+import { FormValidationPayload } from "../types";
+const SubmitMessage = ({ status }: { status: FormValidationPayload }) => {
   const { validPayload, validateMessage } = status;
   let colors = validPayload
     ? "text-green-900 bg-green-100 border-green-900"

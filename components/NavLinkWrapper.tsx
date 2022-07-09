@@ -1,4 +1,10 @@
-import { useEffect, useState } from "react";
+import {
+  Dispatch,
+  ReactChild,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
 import { Link } from "react-scroll";
 import { useActiveSection } from "../context/activeSection";
 import { createScrollStopListener } from "../utils/scrollStopListener";
@@ -7,6 +13,10 @@ export const NavLinkWrapper = ({
   toSection,
   children,
   setMobileMenuOpen = null,
+}: {
+  toSection: string;
+  children: ReactChild;
+  setMobileMenuOpen?: Dispatch<SetStateAction<boolean>>;
 }) => {
   const { activeSection, setActiveSection } = useActiveSection();
   const [isActive, setIsActive] = useState(false);
