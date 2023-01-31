@@ -1,29 +1,29 @@
-import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import { HiOutlineCode } from 'react-icons/hi'
-import { HiOutlineViewGrid } from 'react-icons/hi'
-import { MdSyncProblem } from 'react-icons/md'
-import { MdPictureAsPdf } from 'react-icons/md'
-import AppButton from './AppButton'
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { HiOutlineCode } from "react-icons/hi";
+import { HiOutlineViewGrid } from "react-icons/hi";
+import { MdSyncProblem } from "react-icons/md";
+import { MdPictureAsPdf } from "react-icons/md";
+import AppButton from "./AppButton";
 import {
   initialLeft,
   initialRight,
   final,
-} from '../animation/animationsOnScroll'
-import { easing } from '../animation/settings'
-import { useActivateSection } from '../customHooks/useActivateSection'
-import { MotionSectionTitle } from './MotionSectionTitle'
+} from "../animation/animationsOnScroll";
+import { easing } from "../animation/settings";
+import { useActivateSection } from "../customHooks/useActivateSection";
+import { MotionSectionTitle } from "./MotionSectionTitle";
 
 const AboutMe = ({ id }) => {
   const { ref: bl1ref, inView: inView1 } = useInView({
     threshold: 0.3,
-  })
+  });
 
   const { ref: bl2ref, inView: inView2 } = useInView({
     threshold: 0.3,
-  })
+  });
 
-  const { ref, inView } = useActivateSection(id)
+  const { ref, inView } = useActivateSection(id);
 
   return (
     <motion.div
@@ -116,7 +116,7 @@ const AboutMe = ({ id }) => {
               Nackademin in Stockholm, Sweden.
             </p>
             <a
-              href="https://drive.google.com/file/d/14AQGvuS1Va4isF3U6N4yU2q8c-kE_s2R/view?usp=sharing"
+              href="https://drive.google.com/file/d/1c1HhlR4xEs0h56W7ZqqfgHd0Q3rkw68H/view?usp=sharing"
               target="_blank"
             >
               <AppButton
@@ -129,7 +129,7 @@ const AboutMe = ({ id }) => {
         </motion.div>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
-export default AboutMe
+export default AboutMe;
